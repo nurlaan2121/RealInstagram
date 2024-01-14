@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/CommentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/LikeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/PostDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/exceptions/NotFound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/interfaces/ChatInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/interfaces/PostInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/interfaces/UserInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/models/Chat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/models/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/models/Like.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/models/Post.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/ChatImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/PostImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/UserImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/hello-view.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="This is first Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,11 +77,24 @@
       <workItem from="1705127459064" duration="20000" />
       <workItem from="1705127492288" duration="387000" />
       <workItem from="1705127905577" duration="2151000" />
-      <workItem from="1705137608550" duration="14932000" />
+      <workItem from="1705137608550" duration="15291000" />
     </task>
+    <task id="LOCAL-00001" summary="This is first Commit">
+      <option name="closed" value="true" />
+      <created>1705211615031</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705211615031</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="This is first Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="This is first Commit" />
   </component>
 </project>
