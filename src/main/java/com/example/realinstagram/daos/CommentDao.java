@@ -30,7 +30,7 @@ public class CommentDao {
         String delete = "delete from comments where id = ?";
         PreparedStatement preparedStatement = connect.prepareStatement(delete);
         preparedStatement.setLong(1,idComment);
-        preparedStatement.executeUpdate()
+        preparedStatement.executeUpdate();
     }
     public List<Comment> getAllComments(Post post) throws SQLException {
         List<Comment> comments = new ArrayList<>();
