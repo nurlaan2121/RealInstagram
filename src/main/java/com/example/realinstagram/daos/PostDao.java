@@ -50,4 +50,57 @@ public class PostDao {
         }
         return posts;
     }
+    public Post findById(long postId) throws SQLException {
+        String findByIdQuery = "SELECT * FROM posts WHERE id = ?";
+        try (PreparedStatement findByIdPre = connect.prepareStatement(findByIdQuery)) {
+            findByIdPre.setLong(1, postId);
+            ResultSet resultSet = findByIdPre.executeQuery();
+
+            if (resultSet.next()) {
+                Post post = new Post();
+                post.setId(postId);
+                post.setLikes(likeDao.getAllLikes(post));
+                post.setComments(commentDao.getAllComments(post));
+                post.setPost(resultSet.getString("post"));
+                User owner = userDao.getUserById(resultSet.getLong("id_owner"));
+                post.setOwner(owner);
+                post.setCreatedAd(resultSet.getDate("data"));
+                return post;
+            }
+        }
+        return null;
+    }
+    public List<Post> findByName(String username) throws SQLException {
+        List<Post> posts = new ArrayList<>();
+        String getUserByNameQuery = "SELECT * FROM users WHERE username = ?";
+
+        try (PreparedStatement getUserPre = connect.prepareStatement(getUserByNameQuery)) {
+            getUserPre.setString(1, username);
+            ResultSet userResultSet = getUserPre.executeQuery();
+
+            if (userResultSet.next()) {
+                User user = new User();
+                user.setId(userResultSet.getLong("id"));
+
+                String getAllPostsQuery = "SELECT * FROM posts WHERE id_owner = ?";
+                try (PreparedStatement getAllPre = connect.prepareStatement(getAllPostsQuery)) {
+                    getAllPre.setLong(1, user.getId());
+                    ResultSet resultSet = getAllPre.executeQuery();
+
+                    while (resultSet.next()) {
+                        Post post = new Post();
+                        post.setId(resultSet.getLong("id"));
+                        post.setLikes(likeDao.getAllLikes(post));
+                        post.setComments(commentDao.getAllComments(post));
+                        post.setPost(resultSet.getString("post"));
+                        post.setOwner(user);
+                        post.setCreatedAd(resultSet.getDate("data"));
+                        posts.add(post);
+                    }
+                }
+            }
+        }
+
+        return posts;
+    }
 }

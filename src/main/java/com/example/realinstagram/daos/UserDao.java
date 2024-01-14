@@ -84,4 +84,24 @@ public class UserDao {
         return users;
     }
 
+    public User getUserById(long userId) throws SQLException {
+        String getUserById = "SELECT * FROM users WHERE id = ?";
+
+        try (PreparedStatement getUserByIdPre = connect.prepareStatement(getUserById)) {
+            getUserByIdPre.setLong(1, userId);
+            ResultSet getUserByIdRes = getUserByIdPre.executeQuery();
+
+            if (getUserByIdRes.next()) {
+                User user = new User();
+                user.setId(userId);
+                user.setLogin(getUserByIdRes.getString("login"));
+                user.setPassword(getUserByIdRes.getString("password"));
+                user.setPosts(postDao.getAllPostInUser(user));
+                return user;
+            }
+        }
+
+        return null;  // Возвращаем null, если пользователь с указанным id не найден
+    }
+
 }
