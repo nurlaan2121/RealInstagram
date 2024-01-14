@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0"
             prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.realinstagram.controllers.MainController">
+            fx:controller="com.example.realinstagram.controllers.Homepage">
     <children>
         <ImageView fx:id="frameOne" fitHeight="427.0" fitWidth="735.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true"
                    preserveRatio="true">
