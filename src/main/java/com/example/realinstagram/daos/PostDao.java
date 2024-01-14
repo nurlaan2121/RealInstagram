@@ -19,24 +19,31 @@ public class PostDao {
         this.likeDao = likeDao;
         this.commentDao = commentDao;
     }
-    public void addPost(User user,String post) throws SQLException {
+
+    public void addPost(User user, String post) throws SQLException {
         String addPost = "insert into posts(data,id_owner,post) values(current_date,?,?)";
-        PreparedStatement addPre  = connect.prepareStatement(addPost);
-        addPre.setLong(1,user.getId());
-        addPre.setString(2,post);
+        PreparedStatement addPre = connect.prepareStatement(addPost);
+        addPre.setLong(1, user.getId());
+        addPre.setString(2, post);
         int i = addPre.executeUpdate();
+        if (i > 0) System.out.println("Post successfully saved");
+        else System.out.println("Failed to save the post");
     }
+
     public void deletePost(Long id) throws SQLException {
         String delete = "delete posts where id = ?";
         PreparedStatement deletePre = connect.prepareStatement(delete);
-        deletePre.setLong(1,id);
+        deletePre.setLong(1, id);
         int i = deletePre.executeUpdate();
+        if (i > 0) System.out.println("post successfully deleted");
+        else System.out.println("Failed to delete the post");
     }
+
     public List<Post> getAllPostInUser(User user) throws SQLException {
         List<Post> posts = new ArrayList<>();
         String getAllPosts = "select * from posts where id_owner = ?";
         PreparedStatement getAllPre = connect.prepareStatement(getAllPosts);
-        getAllPre.setLong(1,user.getId());
+        getAllPre.setLong(1, user.getId());
         ResultSet resultSet = getAllPre.executeQuery();
         while (resultSet.next()) {
             Post post = new Post();
@@ -50,6 +57,7 @@ public class PostDao {
         }
         return posts;
     }
+
     public Post findById(long postId) throws SQLException {
         String findByIdQuery = "SELECT * FROM posts WHERE id = ?";
         try (PreparedStatement findByIdPre = connect.prepareStatement(findByIdQuery)) {
@@ -70,6 +78,7 @@ public class PostDao {
         }
         return null;
     }
+
     public List<Post> findByName(String username) throws SQLException {
         List<Post> posts = new ArrayList<>();
         String getUserByNameQuery = "SELECT * FROM users WHERE username = ?";
@@ -100,7 +109,35 @@ public class PostDao {
                 }
             }
         }
-
         return posts;
+    }
+
+    public List<Post> getAllPosts() throws SQLException {
+        List<Post> posts = new ArrayList<>();
+        String getAllPosts = "SELECT * FROM posts";
+        try (PreparedStatement getAllPre = connect.prepareStatement(getAllPosts);
+             ResultSet resultSet = getAllPre.executeQuery()) {
+            while (resultSet.next()) {
+                Post post = new Post();
+                post.setId((long) resultSet.getInt("id"));
+                post.setLikes(likeDao.getAllLikes(post));
+                post.setComments(commentDao.getAllComments(post));
+                post.setPost(resultSet.getString("post"));
+                post.setCreatedAd(resultSet.getDate("data"));
+                posts.add(post);
+            }
+        }
+        return posts;
+    }
+
+    public void updatePost(Long idPost, String updatedPost) throws SQLException {
+        String updatePost = "UPDATE posts SET post = ? WHERE id = ?";
+        try (PreparedStatement preparedStatement = connect.prepareStatement(updatePost)) {
+            preparedStatement.setString(1, updatedPost);
+            preparedStatement.setLong(2, idPost);
+            int i = preparedStatement.executeUpdate();
+            if (i > 0) System.out.println("The post successfully updated");
+            else System.out.println("Failed to update the post");
+        }
     }
 }
