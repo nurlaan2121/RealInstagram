@@ -43,6 +43,7 @@ public class UserImpl implements UserInterface {
     public String deleteUserById(Long userId){
         try {
             if (checkUserId(userId)){
+
                 userDao.deleteUserById(userId);
                 return "";
             } else throw new NotFound("User with id: '"+userId+"' not found");
