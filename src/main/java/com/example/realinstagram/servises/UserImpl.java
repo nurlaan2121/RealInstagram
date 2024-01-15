@@ -43,7 +43,6 @@ public class UserImpl implements UserInterface {
     public String deleteUserById(Long userId){
         try {
             if (checkUserId(userId)){
-
                 userDao.deleteUserById(userId);
                 return "";
             } else throw new NotFound("User with id: '"+userId+"' not found");
@@ -58,8 +57,9 @@ public class UserImpl implements UserInterface {
                 return userDao.getOneUser(login, password);
             } else throw new NotFound("Incorrect user name or password");
         } catch (SQLException | NotFound e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
+        return null;
     }
     @Override
     public List<User> getAllUsers() {
@@ -80,11 +80,12 @@ public class UserImpl implements UserInterface {
         }
     }
     private boolean checkUniq(String str) throws SQLException {
-        return userDao.getAllUsers().stream()
-                .anyMatch(user -> !user.getLogin().equalsIgnoreCase(str));
+//        return userDao.getAllUsers().stream()
+//                .anyMatch(user -> !user.getLogin().equalsIgnoreCase(str));
+        return true;
     }
     private boolean checkUniqLength(String str){
-        return str.length() > 4;
+        return str.length() > 3;
     }
     private boolean checkUserId(Long userId) throws SQLException {
         return userDao.getAllUsers().stream()

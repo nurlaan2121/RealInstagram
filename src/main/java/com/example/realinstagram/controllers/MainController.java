@@ -2,11 +2,16 @@ package com.example.realinstagram.controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
 import com.example.realinstagram.Main;
+import com.example.realinstagram.daos.CommentDao;
+import com.example.realinstagram.daos.LikeDao;
+import com.example.realinstagram.daos.PostDao;
+import com.example.realinstagram.daos.UserDao;
 import com.example.realinstagram.generics.MyChecks;
 import com.example.realinstagram.models.User;
 import com.example.realinstagram.servises.UserImpl;
@@ -23,7 +28,11 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class MainController {
-    UserImpl user;
+    UserDao userDao = new UserDao();
+    CommentDao commentDao = new CommentDao(userDao);
+    LikeDao likeDao = new LikeDao(userDao);
+    PostDao postDao = new PostDao(userDao, likeDao, commentDao);
+    UserImpl user = new UserImpl(userDao);
 
 
     @FXML
@@ -50,6 +59,9 @@ public class MainController {
     @FXML
     private Label textlabel;
 
+    public MainController() throws SQLException {
+    }
+
     @FXML
     void initialize() {
         String mediaPath = "/com/example/realinstagram/mysounds/button.mp3";
@@ -57,20 +69,29 @@ public class MainController {
         MediaPlayer mediaPlayer = new MediaPlayer(media);
 
         loginbtn.setOnAction(actionEvent -> {
+            User currentUser = null;
             mediaPlayer.stop();
             mediaPlayer.play();
             if (MyChecks.allcheck(loginfld.getText())) {
                 if (MyChecks.allcheck(passwordfld.getText())) {
-                    User deleteUSer = null;
-                    try {
-                        deleteUSer = user.logIn(loginfld.getText(), passwordfld.getText());
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    if (deleteUSer != null) {
+                    currentUser = user.logIn(loginfld.getText(), passwordfld.getText());
+                    System.out.println(currentUser);
+                    if (currentUser != null) {
                         textlabel.setText("Success");
-                        User currentUser = deleteUSer;
+                        System.out.println(currentUser);
 
+
+                        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("homepage.fxml"));
+                        try {
+                            Scene scene = new Scene(fxmlLoader.load(), 735, 427);
+                            Stage stage = new Stage();
+                            stage.setTitle("Hello!");
+                            stage.setResizable(false);
+                            stage.setScene(scene);
+                            stage.show();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
 
                     }
                     textlabel.setText("Invalid login or password");
@@ -81,16 +102,17 @@ public class MainController {
 
         createbtn.setOnAction(actionEvent -> {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("createpage.fxml"));
+            Scene scene = null;
             try {
-                Scene scene = new Scene(fxmlLoader.load(), 735, 427);
-                Stage stage = new Stage();
-                stage.setTitle("Hello!");
-                stage.setResizable(false);
-                stage.setScene(scene);
-                stage.show();
+                scene = new Scene(fxmlLoader.load(), 735, 427);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            Stage stage = new Stage();
+            stage.setTitle("Hello!");
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
 
 
         });
