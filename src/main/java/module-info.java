@@ -1,9 +1,9 @@
 module com.example.realinstagram {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.sql;
     requires javafx.media;
     requires com.zaxxer.hikari;
+    requires java.sql;
 
 
     opens com.example.realinstagram to javafx.fxml;

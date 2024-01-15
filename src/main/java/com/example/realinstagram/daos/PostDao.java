@@ -2,10 +2,11 @@ package com.example.realinstagram.daos;
 
 import com.example.realinstagram.models.Post;
 import com.example.realinstagram.models.User;
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,16 +14,7 @@ public class PostDao {
     final UserDao userDao;
     final LikeDao likeDao;
     final CommentDao commentDao;
-    private static final HikariDataSource dataSource;
 
-    static {
-        HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:postgresql://rosie.db.elephantsql.com:5432/ipslotcr");
-        config.setUsername("ipslotcr");
-        config.setPassword("87xlYrK7AqXosaDu--G1qAhfoImf9GRE");
-        config.setMaximumPoolSize(100);
-        dataSource = new HikariDataSource(config);
-    }
 
     public PostDao(UserDao userDao, LikeDao likeDao, CommentDao commentDao) throws SQLException {
         this.userDao = userDao;
@@ -32,7 +24,7 @@ public class PostDao {
 
     public void addPost(User user, String post) throws SQLException {
         String addPost = "insert into posts(data,id_owner,post) values(current_date,?,?)";
-        Connection connection = dataSource.getConnection();
+        Connection connection = UserDao.connection;
         PreparedStatement addPre = connection.prepareStatement(addPost);
         addPre.setLong(1, user.getId());
         addPre.setString(2, post);
@@ -43,7 +35,7 @@ public class PostDao {
 
     public void deletePost(Long id) throws SQLException {
         String delete = "delete posts where id = ?";
-        Connection connection = dataSource.getConnection();
+        Connection connection = UserDao.connection;
         PreparedStatement deletePre = connection.prepareStatement(delete);
         deletePre.setLong(1, id);
         int i = deletePre.executeUpdate();
@@ -54,7 +46,7 @@ public class PostDao {
     public List<Post> getAllPostInUser(User user) throws SQLException {
         List<Post> posts = new ArrayList<>();
         String getAllPosts = "select * from posts where id_owner = ?";
-        Connection connection = dataSource.getConnection();
+        Connection connection = UserDao.connection;
         PreparedStatement getAllPre = connection.prepareStatement(getAllPosts);
         getAllPre.setLong(1, user.getId());
         ResultSet resultSet = getAllPre.executeQuery();
@@ -73,7 +65,7 @@ public class PostDao {
 
     public Post findById(long postId) throws SQLException {
         String findByIdQuery = "SELECT * FROM posts WHERE id = ?";
-        try (Connection connection = dataSource.getConnection();
+        try (Connection connection = UserDao.connection;
              PreparedStatement findByIdPre = connection.prepareStatement(findByIdQuery)) {
             findByIdPre.setLong(1, postId);
             ResultSet resultSet = findByIdPre.executeQuery();
@@ -97,7 +89,7 @@ public class PostDao {
         List<Post> posts = new ArrayList<>();
         String getUserByNameQuery = "SELECT * FROM users WHERE username = ?";
 
-        try (Connection connection = dataSource.getConnection();
+        try (Connection connection = UserDao.connection;
              PreparedStatement getUserPre = connection.prepareStatement(getUserByNameQuery)) {
             getUserPre.setString(1, username);
             ResultSet userResultSet = getUserPre.executeQuery();
@@ -130,7 +122,7 @@ public class PostDao {
     public List<Post> getAllPosts() throws SQLException {
         List<Post> posts = new ArrayList<>();
         String getAllPosts = "SELECT * FROM posts";
-        try (Connection connection = dataSource.getConnection();
+        try (Connection connection = UserDao.connection;
              PreparedStatement getAllPre = connection.prepareStatement(getAllPosts);
              ResultSet resultSet = getAllPre.executeQuery()) {
             while (resultSet.next()) {
@@ -148,7 +140,7 @@ public class PostDao {
 
     public void updatePost(Long idPost, String updatedPost) throws SQLException {
         String updatePost = "UPDATE posts SET post = ? WHERE id = ?";
-        try (Connection connection = dataSource.getConnection();
+        try (Connection connection = UserDao.connection;
              PreparedStatement preparedStatement = connection.prepareStatement(updatePost)) {
             preparedStatement.setString(1, updatedPost);
             preparedStatement.setLong(2, idPost);

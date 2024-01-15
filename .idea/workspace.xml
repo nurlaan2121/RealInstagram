@@ -5,23 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="This is first Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/44f27ad9-1c22-4e50-81d5-f5324a24fd66.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/44f27ad9-1c22-4e50-81d5-f5324a24fd66.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_15_2024_11_08_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_15_2024_11_08_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Createpage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Createpage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/CommentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/LikeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/LikeDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/PostDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/createpage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/createpage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,12 +80,16 @@
     &quot;Maven.RealInstagram [install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.RealInstagram [javafx:r].executor&quot;: &quot;Run&quot;,
     &quot;Maven.RealInstagram [mvn,clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RealInstagram [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.RealInstagram [test].executor&quot;: &quot;Run&quot;,
     &quot;Maven.Unknown [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.Unknown [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [install].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/User/IdeaProjects/RealInstagram/src/main/java/com/example/realinstagram&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -87,6 +97,10 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -125,6 +139,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +169,9 @@
       <workItem from="1705222042564" duration="4000" />
       <workItem from="1705222537494" duration="1740000" />
       <workItem from="1705303523730" duration="588000" />
+      <workItem from="1705323933944" duration="314000" />
+      <workItem from="1705324378002" duration="6381000" />
+      <workItem from="1705332798653" duration="887000" />
     </task>
     <task id="LOCAL-00001" summary="This is first Commit">
       <option name="closed" value="true" />

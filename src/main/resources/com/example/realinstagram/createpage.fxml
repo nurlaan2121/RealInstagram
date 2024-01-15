@@ -8,44 +8,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0"
-            prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.realinstagram.controllers.Createpage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realinstagram.controllers.Createpage">
     <children>
-        <ImageView fx:id="frameOne" fitHeight="427.0" fitWidth="735.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true"
-                   preserveRatio="true">
+        <ImageView fx:id="frameOne" fitHeight="427.0" fitWidth="735.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@myimages/frameOne.png"/>
+                <Image url="@myimages/frameOne.png" />
             </image>
         </ImageView>
         <AnchorPane layoutX="394.0" layoutY="75.0" prefHeight="338.0" prefWidth="297.0">
             <children>
                 <TextField fx:id="loginfld" layoutX="62.0" layoutY="53.0" promptText="Login">
                     <font>
-                        <Font size="14.0"/>
+                        <Font size="14.0" />
                     </font>
                 </TextField>
                 <TextField fx:id="passwordfld" layoutX="62.0" layoutY="103.0" promptText="Password">
                     <font>
-                        <Font size="14.0"/>
+                        <Font size="14.0" />
                     </font>
                 </TextField>
-                <Button fx:id="createbtn" layoutX="102.0" layoutY="178.0" mnemonicParsing="false" prefHeight="30.0"
-                        prefWidth="93.0" style="-fx-background-color: blue;" text="Create" textFill="WHITE"/>
-                <Label fx:id="textlabel" layoutX="87.0" layoutY="14.0" prefHeight="30.0" prefWidth="123.0"
-                       text="       Write info">
+                <Button fx:id="createbtn" layoutX="102.0" layoutY="178.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" style="-fx-background-color: blue;" text="Create" textFill="WHITE" />
+                <Label fx:id="textlabel" layoutX="87.0" layoutY="14.0" prefHeight="30.0" prefWidth="123.0" text="       Write info">
                     <font>
-                        <Font size="15.0"/>
+                        <Font size="15.0" />
                     </font>
                 </Label>
-                <Label layoutX="65.0" layoutY="242.0" prefHeight="30.0" prefWidth="189.0"
-                       text="  If you have accanaunt!">
+                <Label layoutX="65.0" layoutY="242.0" prefHeight="30.0" prefWidth="189.0" text="  If you have accanaunt!">
                     <font>
-                        <Font size="15.0"/>
+                        <Font size="15.0" />
                     </font>
                 </Label>
-                <Button fx:id="loginbtn" layoutX="102.0" layoutY="272.0" mnemonicParsing="false" prefHeight="30.0"
-                        prefWidth="93.0" text="Login"/>
+                <Button fx:id="loginbtn" layoutX="102.0" layoutY="272.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" text="Login" />
             </children>
         </AnchorPane>
     </children>

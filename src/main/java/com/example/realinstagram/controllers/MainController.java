@@ -1,12 +1,5 @@
 package com.example.realinstagram.controllers;
 
-import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.Objects;
-import java.util.ResourceBundle;
-import java.util.concurrent.atomic.AtomicReference;
-
 import com.example.realinstagram.Main;
 import com.example.realinstagram.daos.CommentDao;
 import com.example.realinstagram.daos.LikeDao;
@@ -15,24 +8,25 @@ import com.example.realinstagram.daos.UserDao;
 import com.example.realinstagram.generics.MyChecks;
 import com.example.realinstagram.models.User;
 import com.example.realinstagram.servises.UserImpl;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.Objects;
+import java.util.ResourceBundle;
+
 public class MainController {
-    UserDao userDao = new UserDao();
-    CommentDao commentDao = new CommentDao(userDao);
-    LikeDao likeDao = new LikeDao(userDao);
-    PostDao postDao = new PostDao(userDao, likeDao, commentDao);
-    UserImpl user = new UserImpl(userDao);
+
 
 
     @FXML
@@ -61,6 +55,11 @@ public class MainController {
 
     public MainController() throws SQLException {
     }
+    UserDao userDao = new UserDao();
+    CommentDao commentDao = new CommentDao(userDao);
+    LikeDao likeDao = new LikeDao(userDao);
+    PostDao postDao = new PostDao(userDao, likeDao, commentDao);
+    UserImpl user = new UserImpl(userDao);
 
     @FXML
     void initialize() {

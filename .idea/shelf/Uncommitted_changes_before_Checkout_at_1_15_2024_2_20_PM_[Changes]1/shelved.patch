@@ -1,0 +1,222 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>com.example</groupId>\r\n    <artifactId>RealInstagram</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <name>RealInstagram</name>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <junit.version>5.10.0</junit.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <!-- SLF4J API -->\r\n        <dependency>\r\n            <groupId>org.slf4j</groupId>\r\n            <artifactId>slf4j-api</artifactId>\r\n            <version>2.0.0-alpha1</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>ch.qos.logback</groupId>\r\n            <artifactId>logback-classic</artifactId>\r\n            <version>1.2.3</version>\r\n        </dependency>\r\n\r\n        <!-- Реализация Logback -->\r\n        <dependency>\r\n            <groupId>ch.qos.logback</groupId>\r\n            <artifactId>logback-classic</artifactId>\r\n            <version>1.2.3</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-controls</artifactId>\r\n            <version>21</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.zaxxer</groupId>\r\n            <artifactId>HikariCP</artifactId>\r\n            <version>4.0.3</version> <!-- Проверьте актуальную версию на момент использования -->\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-media</artifactId>\r\n            <version>21</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.postgresql</groupId>\r\n            <artifactId>postgresql</artifactId>\r\n            <version>42.7.0</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-fxml</artifactId>\r\n            <version>21</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-api</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-engine</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-compiler-plugin</artifactId>\r\n                <version>3.11.0</version>\r\n                <configuration>\r\n                    <source>21</source>\r\n                    <target>21</target>\r\n                </configuration>\r\n            </plugin>\r\n            <plugin>\r\n                <groupId>org.openjfx</groupId>\r\n                <artifactId>javafx-maven-plugin</artifactId>\r\n                <version>0.0.8</version>\r\n                <executions>\r\n                    <execution>\r\n                        <!-- Default configuration for running with: mvn clean javafx:run -->\r\n                        <id>default-cli</id>\r\n                        <configuration>\r\n                            <mainClass>com.example.realinstagram/com.example.realinstagram.Main</mainClass>\r\n                            <launcher>app</launcher>\r\n                            <jlinkZipName>app</jlinkZipName>\r\n                            <jlinkImageName>app</jlinkImageName>\r\n                            <noManPages>true</noManPages>\r\n                            <stripDebug>true</stripDebug>\r\n                            <noHeaderFiles>true</noHeaderFiles>\r\n                        </configuration>\r\n                    </execution>\r\n                </executions>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -21,19 +21,6 @@
+             <artifactId>slf4j-api</artifactId>
+             <version>2.0.0-alpha1</version>
+         </dependency>
+-
+-        <dependency>
+-            <groupId>ch.qos.logback</groupId>
+-            <artifactId>logback-classic</artifactId>
+-            <version>1.2.3</version>
+-        </dependency>
+-
+-        <!-- Реализация Logback -->
+-        <dependency>
+-            <groupId>ch.qos.logback</groupId>
+-            <artifactId>logback-classic</artifactId>
+-            <version>1.2.3</version>
+-        </dependency>
+         <dependency>
+             <groupId>org.openjfx</groupId>
+             <artifactId>javafx-controls</artifactId>
+Index: src/main/resources/com/example/realinstagram/logback.xml
+===================================================================
+diff --git a/src/main/resources/com/example/realinstagram/logback.xml b/src/main/resources/com/example/realinstagram/logback.xml
+deleted file mode 100644
+--- a/src/main/resources/com/example/realinstagram/logback.xml	
++++ /dev/null	
+@@ -1,11 +0,0 @@
+-<configuration>
+-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+-        <encoder>
+-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+-        </encoder>
+-    </appender>
+-
+-    <root level="debug">
+-        <appender-ref ref="STDOUT"/>
+-    </root>
+-</configuration>
+Index: src/main/resources/logback.xml
+===================================================================
+diff --git a/src/main/resources/logback.xml b/src/main/resources/logback.xml
+deleted file mode 100644
+--- a/src/main/resources/logback.xml	
++++ /dev/null	
+@@ -1,11 +0,0 @@
+-<configuration>
+-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+-        <encoder>
+-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+-        </encoder>
+-    </appender>
+-
+-    <root level="debug">
+-        <appender-ref ref="STDOUT"/>
+-    </root>
+-</configuration>
+Index: src/main/resources/com/example/realinstagram/hello-view.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"427.0\"\r\n            prefWidth=\"725.0\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\"\r\n            fx:controller=\"com.example.realinstagram.controllers.MainController\">\r\n    <children>\r\n        <ImageView fx:id=\"frameOne\" fitHeight=\"427.0\" fitWidth=\"735.0\" layoutX=\"-6.0\" layoutY=\"1.0\" pickOnBounds=\"true\"\r\n                   preserveRatio=\"true\">\r\n            <image>\r\n                <Image url=\"@myimages/frameOne.png\"/>\r\n            </image>\r\n        </ImageView>\r\n        <AnchorPane layoutX=\"394.0\" layoutY=\"75.0\" prefHeight=\"338.0\" prefWidth=\"297.0\">\r\n            <children>\r\n                <TextField fx:id=\"loginfld\" layoutX=\"62.0\" layoutY=\"53.0\" promptText=\"Login\">\r\n                    <font>\r\n                        <Font size=\"14.0\"/>\r\n                    </font>\r\n                </TextField>\r\n                <TextField fx:id=\"passwordfld\" layoutX=\"62.0\" layoutY=\"103.0\" promptText=\"Password\">\r\n                    <font>\r\n                        <Font size=\"14.0\"/>\r\n                    </font>\r\n                </TextField>\r\n                <Button fx:id=\"loginbtn\" layoutX=\"102.0\" layoutY=\"180.0\" mnemonicParsing=\"false\" prefHeight=\"30.0\"\r\n                        prefWidth=\"93.0\" style=\"-fx-background-color: blue;\" text=\"Login\" textFill=\"WHITE\"/>\r\n                <Button fx:id=\"createbtn\" layoutX=\"102.0\" layoutY=\"272.0\" mnemonicParsing=\"false\" prefHeight=\"30.0\"\r\n                        prefWidth=\"93.0\" text=\"Create\"/>\r\n                <Label fx:id=\"textlabel\" layoutX=\"87.0\" layoutY=\"14.0\" prefHeight=\"30.0\" prefWidth=\"123.0\"\r\n                       text=\"       Write info\">\r\n                    <font>\r\n                        <Font size=\"15.0\"/>\r\n                    </font>\r\n                </Label>\r\n                <Label layoutX=\"65.0\" layoutY=\"242.0\" prefHeight=\"30.0\" prefWidth=\"189.0\"\r\n                       text=\"  If you dont have accaunt!\">\r\n                    <font>\r\n                        <Font size=\"15.0\"/>\r\n                    </font>\r\n                </Label>\r\n            </children>\r\n        </AnchorPane>\r\n    </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/realinstagram/hello-view.fxml b/src/main/resources/com/example/realinstagram/hello-view.fxml
+--- a/src/main/resources/com/example/realinstagram/hello-view.fxml	
++++ b/src/main/resources/com/example/realinstagram/hello-view.fxml	
+@@ -8,45 +8,38 @@
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.text.Font?>
+ 
+-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0"
+-            prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+-            fx:controller="com.example.realinstagram.controllers.MainController">
+-    <children>
+-        <ImageView fx:id="frameOne" fitHeight="427.0" fitWidth="735.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true"
+-                   preserveRatio="true">
+-            <image>
+-                <Image url="@myimages/frameOne.png"/>
+-            </image>
+-        </ImageView>
+-        <AnchorPane layoutX="394.0" layoutY="75.0" prefHeight="338.0" prefWidth="297.0">
+-            <children>
+-                <TextField fx:id="loginfld" layoutX="62.0" layoutY="53.0" promptText="Login">
+-                    <font>
+-                        <Font size="14.0"/>
+-                    </font>
+-                </TextField>
+-                <TextField fx:id="passwordfld" layoutX="62.0" layoutY="103.0" promptText="Password">
+-                    <font>
+-                        <Font size="14.0"/>
+-                    </font>
+-                </TextField>
+-                <Button fx:id="loginbtn" layoutX="102.0" layoutY="180.0" mnemonicParsing="false" prefHeight="30.0"
+-                        prefWidth="93.0" style="-fx-background-color: blue;" text="Login" textFill="WHITE"/>
+-                <Button fx:id="createbtn" layoutX="102.0" layoutY="272.0" mnemonicParsing="false" prefHeight="30.0"
+-                        prefWidth="93.0" text="Create"/>
+-                <Label fx:id="textlabel" layoutX="87.0" layoutY="14.0" prefHeight="30.0" prefWidth="123.0"
+-                       text="       Write info">
+-                    <font>
+-                        <Font size="15.0"/>
+-                    </font>
+-                </Label>
+-                <Label layoutX="65.0" layoutY="242.0" prefHeight="30.0" prefWidth="189.0"
+-                       text="  If you dont have accaunt!">
+-                    <font>
+-                        <Font size="15.0"/>
+-                    </font>
+-                </Label>
+-            </children>
+-        </AnchorPane>
+-    </children>
++<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realinstagram.controllers.MainController">
++   <children>
++      <ImageView fx:id="frameOne" fitHeight="427.0" fitWidth="735.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
++         <image>
++            <Image url="@myimages/frameOne.png" />
++         </image>
++      </ImageView>
++      <AnchorPane layoutX="394.0" layoutY="75.0" prefHeight="338.0" prefWidth="297.0">
++         <children>
++            <TextField fx:id="loginfld" layoutX="62.0" layoutY="53.0" promptText="Login">
++               <font>
++                  <Font size="14.0" />
++               </font>
++            </TextField>
++            <TextField fx:id="passwordfld" layoutX="62.0" layoutY="103.0" promptText="Password">
++               <font>
++                  <Font size="14.0" />
++               </font>
++            </TextField>
++            <Button fx:id="loginbtn" layoutX="102.0" layoutY="180.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" style="-fx-background-color: blue;" text="Login" textFill="WHITE" />
++            <Button fx:id="createbtn" layoutX="102.0" layoutY="272.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" text="Create" />
++            <Label fx:id="textlabel" layoutX="87.0" layoutY="14.0" prefHeight="30.0" prefWidth="123.0" text="       Write info">
++               <font>
++                  <Font size="15.0" />
++               </font>
++            </Label>
++            <Label layoutX="65.0" layoutY="242.0" prefHeight="30.0" prefWidth="189.0" text="  If you dont have accaunt!">
++               <font>
++                  <Font size="15.0" />
++               </font>
++            </Label>
++         </children>
++      </AnchorPane>
++   </children>
+ </AnchorPane>
+Index: src/main/resources/com/example/realinstagram/createpage.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"427.0\"\r\n            prefWidth=\"725.0\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\"\r\n            fx:controller=\"com.example.realinstagram.controllers.Createpage\">\r\n    <children>\r\n        <ImageView fx:id=\"frameOne\" fitHeight=\"427.0\" fitWidth=\"735.0\" layoutX=\"-6.0\" layoutY=\"1.0\" pickOnBounds=\"true\"\r\n                   preserveRatio=\"true\">\r\n            <image>\r\n                <Image url=\"@myimages/frameOne.png\"/>\r\n            </image>\r\n        </ImageView>\r\n        <AnchorPane layoutX=\"394.0\" layoutY=\"75.0\" prefHeight=\"338.0\" prefWidth=\"297.0\">\r\n            <children>\r\n                <TextField fx:id=\"loginfld\" layoutX=\"62.0\" layoutY=\"53.0\" promptText=\"Login\">\r\n                    <font>\r\n                        <Font size=\"14.0\"/>\r\n                    </font>\r\n                </TextField>\r\n                <TextField fx:id=\"passwordfld\" layoutX=\"62.0\" layoutY=\"103.0\" promptText=\"Password\">\r\n                    <font>\r\n                        <Font size=\"14.0\"/>\r\n                    </font>\r\n                </TextField>\r\n                <Button fx:id=\"createbtn\" layoutX=\"102.0\" layoutY=\"178.0\" mnemonicParsing=\"false\" prefHeight=\"30.0\"\r\n                        prefWidth=\"93.0\" style=\"-fx-background-color: blue;\" text=\"Create\" textFill=\"WHITE\"/>\r\n                <Label fx:id=\"textlabel\" layoutX=\"87.0\" layoutY=\"14.0\" prefHeight=\"30.0\" prefWidth=\"123.0\"\r\n                       text=\"       Write info\">\r\n                    <font>\r\n                        <Font size=\"15.0\"/>\r\n                    </font>\r\n                </Label>\r\n                <Label layoutX=\"65.0\" layoutY=\"242.0\" prefHeight=\"30.0\" prefWidth=\"189.0\"\r\n                       text=\"  If you have accanaunt!\">\r\n                    <font>\r\n                        <Font size=\"15.0\"/>\r\n                    </font>\r\n                </Label>\r\n                <Button fx:id=\"loginbtn\" layoutX=\"102.0\" layoutY=\"272.0\" mnemonicParsing=\"false\" prefHeight=\"30.0\"\r\n                        prefWidth=\"93.0\" text=\"Login\"/>\r\n            </children>\r\n        </AnchorPane>\r\n    </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/realinstagram/createpage.fxml b/src/main/resources/com/example/realinstagram/createpage.fxml
+--- a/src/main/resources/com/example/realinstagram/createpage.fxml	
++++ b/src/main/resources/com/example/realinstagram/createpage.fxml	
+@@ -8,44 +8,37 @@
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.text.Font?>
+ 
+-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0"
+-            prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+-            fx:controller="com.example.realinstagram.controllers.Createpage">
++<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realinstagram.controllers.Createpage">
+     <children>
+-        <ImageView fx:id="frameOne" fitHeight="427.0" fitWidth="735.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true"
+-                   preserveRatio="true">
++        <ImageView fx:id="frameOne" fitHeight="427.0" fitWidth="735.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+             <image>
+-                <Image url="@myimages/frameOne.png"/>
++                <Image url="@myimages/frameOne.png" />
+             </image>
+         </ImageView>
+         <AnchorPane layoutX="394.0" layoutY="75.0" prefHeight="338.0" prefWidth="297.0">
+             <children>
+                 <TextField fx:id="loginfld" layoutX="62.0" layoutY="53.0" promptText="Login">
+                     <font>
+-                        <Font size="14.0"/>
++                        <Font size="14.0" />
+                     </font>
+                 </TextField>
+                 <TextField fx:id="passwordfld" layoutX="62.0" layoutY="103.0" promptText="Password">
+                     <font>
+-                        <Font size="14.0"/>
++                        <Font size="14.0" />
+                     </font>
+                 </TextField>
+-                <Button fx:id="createbtn" layoutX="102.0" layoutY="178.0" mnemonicParsing="false" prefHeight="30.0"
+-                        prefWidth="93.0" style="-fx-background-color: blue;" text="Create" textFill="WHITE"/>
+-                <Label fx:id="textlabel" layoutX="87.0" layoutY="14.0" prefHeight="30.0" prefWidth="123.0"
+-                       text="       Write info">
++                <Button fx:id="createbtn" layoutX="102.0" layoutY="178.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" style="-fx-background-color: blue;" text="Create" textFill="WHITE" />
++                <Label fx:id="textlabel" layoutX="87.0" layoutY="14.0" prefHeight="30.0" prefWidth="123.0" text="       Write info">
+                     <font>
+-                        <Font size="15.0"/>
++                        <Font size="15.0" />
+                     </font>
+                 </Label>
+-                <Label layoutX="65.0" layoutY="242.0" prefHeight="30.0" prefWidth="189.0"
+-                       text="  If you have accanaunt!">
++                <Label layoutX="65.0" layoutY="242.0" prefHeight="30.0" prefWidth="189.0" text="  If you have accanaunt!">
+                     <font>
+-                        <Font size="15.0"/>
++                        <Font size="15.0" />
+                     </font>
+                 </Label>
+-                <Button fx:id="loginbtn" layoutX="102.0" layoutY="272.0" mnemonicParsing="false" prefHeight="30.0"
+-                        prefWidth="93.0" text="Login"/>
++                <Button fx:id="loginbtn" layoutX="102.0" layoutY="272.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" text="Login" />
+             </children>
+         </AnchorPane>
+     </children>
