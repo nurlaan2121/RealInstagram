@@ -7,7 +7,6 @@ import com.example.realinstagram.models.User;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class UserImpl implements UserInterface {
 
@@ -16,18 +15,20 @@ public class UserImpl implements UserInterface {
     public UserImpl(UserDao userDao) {
         this.userDao = userDao;
     }
+
     @Override
     public String saveUser(User user) {
         try {
             if (checkUniq(user.getLogin()) && checkUniqLength(user.getLogin())
                     && checkUniqLength(user.getPassword())) {
                 userDao.addUser(user);
-                return "";
+                return "Success";
             } else throw new NotFound("Incorrect , please write more 4 symbol");
         } catch (SQLException | NotFound e) {
             return e.getMessage();
         }
     }
+
     @Override
     public String deleteUser(User user) {
         try {
@@ -40,16 +41,18 @@ public class UserImpl implements UserInterface {
             return e.getMessage();
         }
     }
-    public String deleteUserById(Long userId){
+
+    public String deleteUserById(Long userId) {
         try {
-            if (checkUserId(userId)){
+            if (checkUserId(userId)) {
                 userDao.deleteUserById(userId);
                 return "";
-            } else throw new NotFound("User with id: '"+userId+"' not found");
+            } else throw new NotFound("User with id: '" + userId + "' not found");
         } catch (SQLException | NotFound e) {
             return e.getMessage();
         }
     }
+
     @Override
     public User logIn(String login, String password) {
         try {
@@ -61,6 +64,7 @@ public class UserImpl implements UserInterface {
         }
         return null;
     }
+
     @Override
     public List<User> getAllUsers() {
         try {
@@ -69,24 +73,28 @@ public class UserImpl implements UserInterface {
             throw new RuntimeException(e);
         }
     }
+
     @Override
     public User findUserById(Long id) {
         try {
             if (checkUserId(id)) {
                 return userDao.getUserById(id);
-            } else throw new NotFound("user with id: '"+id+"' not found");
+            } else throw new NotFound("user with id: '" + id + "' not found");
         } catch (SQLException | NotFound e) {
             throw new RuntimeException(e);
         }
     }
+
     private boolean checkUniq(String str) throws SQLException {
 //        return userDao.getAllUsers().stream()
 //                .anyMatch(user -> !user.getLogin().equalsIgnoreCase(str));
         return true;
     }
-    private boolean checkUniqLength(String str){
+
+    private boolean checkUniqLength(String str) {
         return str.length() > 3;
     }
+
     private boolean checkUserId(Long userId) throws SQLException {
         return userDao.getAllUsers().stream()
                 .anyMatch(user -> user.getId().equals(userId));

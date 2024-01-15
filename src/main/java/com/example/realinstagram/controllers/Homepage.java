@@ -57,6 +57,7 @@ public class Homepage {
     private Label userNameLbl;
 
     public Homepage() throws SQLException {
+
     }
 
     @FXML

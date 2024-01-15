@@ -90,7 +90,6 @@ public class MainController {
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
-
                     }
                     textlabel.setText("Invalid login or password");
                 }

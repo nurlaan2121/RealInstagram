@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="This is first Commit">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/44f27ad9-1c22-4e50-81d5-f5324a24fd66.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/44f27ad9-1c22-4e50-81d5-f5324a24fd66.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_15_2024_11_08_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_15_2024_11_08_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="This is first Commitr">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/CommentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/LikeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/LikeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/PostDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/createpage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/createpage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/UserImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="refactor/homehagelast" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,44 +59,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RealInstagram [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RealInstagram [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RealInstagram [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RealInstagram [javafx:r].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RealInstagram [mvn,clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RealInstagram [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RealInstagram [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Unknown [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Unknown [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.demo [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.demo [install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/User/IdeaProjects/RealInstagram/src/main/java/com/example/realinstagram&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Maven.RealInstagram [clean,install].executor": "Run",
+    "Maven.RealInstagram [clean].executor": "Run",
+    "Maven.RealInstagram [install].executor": "Run",
+    "Maven.RealInstagram [javafx:r].executor": "Run",
+    "Maven.RealInstagram [mvn,clean,install].executor": "Run",
+    "Maven.RealInstagram [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
+    "Maven.RealInstagram [test].executor": "Run",
+    "Maven.Unknown [clean].executor": "Run",
+    "Maven.Unknown [deploy].executor": "Run",
+    "Maven.demo [clean].executor": "Run",
+    "Maven.demo [install].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/addButtons",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/User/IdeaProjects/RealInstagram/src/main/java/com/example/realinstagram",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\IdeaProjects\RealInstagram\src\main\resources\com\example\realinstagram\myimages" />
@@ -171,7 +159,7 @@
       <workItem from="1705303523730" duration="588000" />
       <workItem from="1705323933944" duration="314000" />
       <workItem from="1705324378002" duration="6381000" />
-      <workItem from="1705332798653" duration="887000" />
+      <workItem from="1705332798653" duration="1541000" />
     </task>
     <task id="LOCAL-00001" summary="This is first Commit">
       <option name="closed" value="true" />
@@ -205,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705298100544</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="This is first Commitr">
+      <option name="closed" value="true" />
+      <created>1705335133259</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705335133259</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +210,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feature/addTwoIcons" />
     <MESSAGE value="This is first Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="This is first Commit" />
+    <MESSAGE value="This is first Commitr" />
+    <option name="LAST_COMMIT_MESSAGE" value="This is first Commitr" />
   </component>
 </project>

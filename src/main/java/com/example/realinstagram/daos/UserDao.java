@@ -77,7 +77,6 @@ public class UserDao {
         PreparedStatement getUserPre = connection.prepareStatement(getUser);
         getUserPre.setString(1, login);
         getUserPre.setString(2, password);
-
         try (ResultSet getUserRes = getUserPre.executeQuery()) {
             if (getUserRes.next()) {
                 User user = new User();
