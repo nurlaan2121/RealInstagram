@@ -7,66 +7,78 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realinstagram.controllers.Homepage">
-   <children>
-      <ImageView fitHeight="427.0" fitWidth="725.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@myimages/homepage.png" />
-         </image>
-      </ImageView>
-      <AnchorPane prefHeight="427.0" prefWidth="84.0">
-         <children>
-            <Button fx:id="homebtn" layoutX="18.0" layoutY="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="51.0">
-               <font>
-                  <Font size="1.0" />
-               </font>
-            </Button>
-            <Button fx:id="searchbtn" layoutX="18.0" layoutY="80.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="51.0">
-               <font>
-                  <Font size="1.0" />
-               </font>
-            </Button>
-            <Button fx:id="addpostbtn" layoutX="18.0" layoutY="149.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="51.0">
-               <font>
-                  <Font size="1.0" />
-               </font>
-            </Button>
-            <Button fx:id="chatbtn" layoutX="19.0" layoutY="222.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="51.0">
-               <font>
-                  <Font size="1.0" />
-               </font>
-            </Button>
-            <Button fx:id="recomendationbtn" layoutX="19.0" layoutY="296.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="51.0">
-               <font>
-                  <Font size="1.0" />
-               </font>
-            </Button>
-            <Button fx:id="myprofilebtn" layoutX="19.0" layoutY="369.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="51.0">
-               <font>
-                  <Font size="1.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-      <Label fx:id="userNameLbl" layoutX="303.0" layoutY="61.0" prefHeight="63.0" prefWidth="272.0" style="-fx-background-color: white;" text="username" textOverrun="CLIP">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Label>
-      <Label fx:id="postLbl" layoutX="227.0" layoutY="150.0" prefHeight="148.0" prefWidth="346.0" text="This is yes post usera ">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <Label fx:id="likeCountLbl" layoutX="281.0" layoutY="316.0" prefHeight="36.0" prefWidth="99.0" text="123456" textFill="#fffdfd">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="commentCountLbl" layoutX="464.0" layoutY="316.0" prefHeight="36.0" prefWidth="99.0" text="6789" textFill="#fffdfd">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0"
+            prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.realinstagram.controllers.Homepage">
+    <children>
+        <ImageView fitHeight="427.0" fitWidth="725.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@myimages/homepage.png"/>
+            </image>
+        </ImageView>
+        <AnchorPane prefHeight="427.0" prefWidth="84.0">
+            <children>
+                <Button fx:id="homebtn" layoutX="18.0" layoutY="10.0" mnemonicParsing="false" opacity="0.0"
+                        prefHeight="44.0" prefWidth="51.0">
+                    <font>
+                        <Font size="1.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="searchbtn" layoutX="18.0" layoutY="80.0" mnemonicParsing="false" opacity="0.0"
+                        prefHeight="44.0" prefWidth="51.0">
+                    <font>
+                        <Font size="1.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="addpostbtn" layoutX="18.0" layoutY="149.0" mnemonicParsing="false" opacity="0.0"
+                        prefHeight="44.0" prefWidth="51.0">
+                    <font>
+                        <Font size="1.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="chatbtn" layoutX="19.0" layoutY="222.0" mnemonicParsing="false" opacity="0.0"
+                        prefHeight="44.0" prefWidth="51.0">
+                    <font>
+                        <Font size="1.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="recomendationbtn" layoutX="19.0" layoutY="296.0" mnemonicParsing="false" opacity="0.0"
+                        prefHeight="44.0" prefWidth="51.0">
+                    <font>
+                        <Font size="1.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="myprofilebtn" layoutX="19.0" layoutY="369.0" mnemonicParsing="false" opacity="0.0"
+                        prefHeight="44.0" prefWidth="51.0">
+                    <font>
+                        <Font size="1.0"/>
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <Label fx:id="userNameLbl" layoutX="303.0" layoutY="61.0" prefHeight="63.0" prefWidth="272.0"
+               style="-fx-background-color: white;" text="username" textOverrun="CLIP">
+            <font>
+                <Font size="32.0"/>
+            </font>
+        </Label>
+        <Label fx:id="postLbl" layoutX="227.0" layoutY="150.0" prefHeight="148.0" prefWidth="346.0"
+               text="This is yes post usera ">
+            <font>
+                <Font size="19.0"/>
+            </font>
+        </Label>
+        <Label fx:id="likeCountLbl" layoutX="281.0" layoutY="316.0" prefHeight="36.0" prefWidth="99.0" text="123456"
+               textFill="#fffdfd">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label fx:id="commentCountLbl" layoutX="464.0" layoutY="316.0" prefHeight="36.0" prefWidth="99.0" text="6789"
+               textFill="#fffdfd">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

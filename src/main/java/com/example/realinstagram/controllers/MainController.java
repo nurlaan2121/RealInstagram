@@ -1,12 +1,15 @@
 package com.example.realinstagram.controllers;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicReference;
 
 import com.example.realinstagram.Main;
+import com.example.realinstagram.generics.MyChecks;
+import com.example.realinstagram.models.User;
+import com.example.realinstagram.servises.UserImpl;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.media.Media;
@@ -20,6 +23,8 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class MainController {
+    UserImpl user;
+
 
     @FXML
     private ResourceBundle resources;
@@ -54,6 +59,23 @@ public class MainController {
         loginbtn.setOnAction(actionEvent -> {
             mediaPlayer.stop();
             mediaPlayer.play();
+            if (MyChecks.allcheck(loginfld.getText())) {
+                if (MyChecks.allcheck(passwordfld.getText())) {
+                    User deleteUSer = null;
+                    try {
+                        deleteUSer = user.logIn(loginfld.getText(), passwordfld.getText());
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    if (deleteUSer != null) {
+                        textlabel.setText("Success");
+                        User currentUser = deleteUSer;
+
+
+                    }
+                    textlabel.setText("Invalid login or password");
+                }
+            }
         });
 
 

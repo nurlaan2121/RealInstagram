@@ -9,13 +9,12 @@ import java.util.List;
 import java.util.Map;
 
 public class UserDao {
-    public UserDao(PostDao postDao) throws SQLException {
-        this.postDao = postDao;
-    }
 
-    final PostDao postDao;
 
     Connection connect = DriverManager.getConnection("jdbc:postgresql://rosie.db.elephantsql.com:5432/ipslotcr", "ipslotcr", "87xlYrK7AqXosaDu--G1qAhfoImf9GRE");
+
+    public UserDao() throws SQLException {
+    }
 
 
     //This for registrasia
@@ -60,7 +59,6 @@ public class UserDao {
             user.setId((long) getUserRes.getInt("id"));
             user.setLogin(getUserRes.getString("login"));
             user.setPassword(getUserRes.getString("password"));
-            user.setPosts(postDao.getAllPostInUser(user));
         }
         return user;
     }
@@ -78,10 +76,30 @@ public class UserDao {
             user.setId((long) getUserRes.getInt("id"));
             user.setLogin(getUserRes.getString("login"));
             user.setPassword(getUserRes.getString("password"));
-            user.setPosts(postDao.getAllPostInUser(user));
+
             users.add(user);
         }
         return users;
+    }
+
+    public User getUserById(long userId) throws SQLException {
+        String getUserById = "SELECT * FROM users WHERE id = ?";
+
+        try (PreparedStatement getUserByIdPre = connect.prepareStatement(getUserById)) {
+            getUserByIdPre.setLong(1, userId);
+            ResultSet getUserByIdRes = getUserByIdPre.executeQuery();
+
+            if (getUserByIdRes.next()) {
+                User user = new User();
+                user.setId(userId);
+                user.setLogin(getUserByIdRes.getString("login"));
+                user.setPassword(getUserByIdRes.getString("password"));
+
+                return user;
+            }
+        }
+
+        return null;  // Возвращаем null, если пользователь с указанным id не найден
     }
 
 }
