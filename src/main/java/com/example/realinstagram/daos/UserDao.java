@@ -21,20 +21,33 @@ public class UserDao {
     //This for registrasia
     public void addUser(User user) throws SQLException {
         String add = "insert into users(login,password) values (?,?)";
-        PreparedStatement preparedStatement = connect.prepareStatement(add);
-        preparedStatement.setString(1, user.getLogin());
-        preparedStatement.setString(2, user.getPassword());
-        int i = preparedStatement.executeUpdate();
+        try (PreparedStatement preparedStatement = connect.prepareStatement(add)) {
+            preparedStatement.setString(1, user.getLogin());
+            preparedStatement.setString(2, user.getPassword());
+            int i = preparedStatement.executeUpdate();
+            if (i > 0) System.out.println("User successfully saved");
+            else System.out.println("Failed to save the user");
+        }
     }
 
     public void deleteUser(User user) throws SQLException {
-        String delete = "delete users where login = ?";
-        PreparedStatement preparedStatement = connect.prepareStatement(delete);
-        preparedStatement.setString(1, user.getLogin());
-        int i = preparedStatement.executeUpdate();
+        String delete = "DELETE FROM users WHERE login = ?";
+        try (PreparedStatement preparedStatement = connect.prepareStatement(delete)) {
+            preparedStatement.setString(1, user.getLogin());
+            int i = preparedStatement.executeUpdate();
+            if (i > 0) System.out.println("user successfully deleted");
+            else System.out.println("Failed to delete the user");
+        }
     }
-
-
+    public void deleteUserById(Long userId) throws SQLException {
+        String delete = "DELETE FROM users WHERE id = ?";
+        try (PreparedStatement preparedStatement = connect.prepareStatement(delete)) {
+            preparedStatement.setLong(1, userId);
+            int i = preparedStatement.executeUpdate();
+            if (i > 0) System.out.println("user successfully deleted");
+            else System.out.println("Failed to delete the user");
+        }
+    }
     public Map<Integer, String> onlyUsersLogin() throws SQLException {
         Map<Integer, String> list = new HashMap<>();
         String get = "select id,login from users";
@@ -45,24 +58,25 @@ public class UserDao {
         }
         return list;
     }
-
-
     //This for login
     public User getOneUser(String login, String password) throws SQLException {
-        String getUser = "select * from users where login = ? and password = ?";
-        User user = new User();
-        PreparedStatement getUserPre = connect.prepareStatement(getUser);
-        getUserPre.setString(1, login);
-        getUserPre.setString(2, password);
-        ResultSet getUserRes = getUserPre.executeQuery();
+        String getUser = "SELECT * FROM users WHERE login = ? AND password = ?";
+        try (PreparedStatement getUserPre = connect.prepareStatement(getUser)) {
+            getUserPre.setString(1, login);
+            getUserPre.setString(2, password);
 
-        while (getUserRes.next()) {
-            user.setId((long) getUserRes.getInt("id"));
-            user.setLogin(getUserRes.getString("login"));
-            user.setPassword(getUserRes.getString("password"));
-            user.setPosts(postDao.getAllPostInUser(user));
+            try (ResultSet getUserRes = getUserPre.executeQuery()) {
+                if (getUserRes.next()) {
+                    User user = new User();
+                    user.setId((long) getUserRes.getInt("id"));
+                    user.setLogin(getUserRes.getString("login"));
+                    user.setPassword(getUserRes.getString("password"));
+                    user.setPosts(postDao.getAllPostInUser(user));
+                    return user;
+                }
+            }
         }
-        return user;
+        return null;
     }
 
     //This for search
@@ -100,8 +114,17 @@ public class UserDao {
                 return user;
             }
         }
-
-        return null;  // Возвращаем null, если пользователь с указанным id не найден
+        return null;
     }
-
+    public void updateUser(User user) throws SQLException {
+        String update = "UPDATE users SET login = ?, password = ? WHERE id = ?";
+        try (PreparedStatement preparedStatement = connect.prepareStatement(update)) {
+            preparedStatement.setString(1, user.getLogin());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setLong(3, user.getId());
+            int i = preparedStatement.executeUpdate();
+            if (i > 0) System.out.println("user successfully updated");
+            else System.out.println("Failed to update the user");
+        }
+    }
 }
