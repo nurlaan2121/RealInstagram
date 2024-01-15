@@ -30,6 +30,11 @@ public class Createpage {
 
     @FXML
     private ResourceBundle resources;
+    UserDao userDao = new UserDao();
+    CommentDao commentDao = new CommentDao(userDao);
+    LikeDao likeDao = new LikeDao(userDao);
+    PostDao postDao = new PostDao(userDao, likeDao, commentDao);
+    UserImpl user = new UserImpl(userDao);
 
     @FXML
     private URL location;
@@ -52,14 +57,13 @@ public class Createpage {
     @FXML
     private Label textlabel;
 
+    public Createpage() throws SQLException {
+    }
+
 
     @FXML
     void initialize() throws SQLException {
-        UserDao userDao = new UserDao();
-        CommentDao commentDao = new CommentDao(userDao);
-        LikeDao likeDao = new LikeDao(userDao);
-        PostDao postDao = new PostDao(userDao, likeDao, commentDao);
-        UserImpl user = new UserImpl(userDao);
+
         String mediaPath = "/com/example/realinstagram/mysounds/button.mp3";
         Media media = new Media(Objects.requireNonNull(getClass().getResource(mediaPath)).toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);

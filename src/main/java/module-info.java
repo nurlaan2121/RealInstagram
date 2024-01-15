@@ -3,6 +3,7 @@ module com.example.realinstagram {
     requires javafx.fxml;
     requires java.sql;
     requires javafx.media;
+    requires com.zaxxer.hikari;
 
 
     opens com.example.realinstagram to javafx.fxml;

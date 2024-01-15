@@ -8,50 +8,72 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
 public class UserDao {
 
-    Connection connect = DriverManager.getConnection("jdbc:postgresql://rosie.db.elephantsql.com:5432/ipslotcr", "ipslotcr", "87xlYrK7AqXosaDu--G1qAhfoImf9GRE");
+    private static final HikariDataSource dataSource;
+
+    static {
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:postgresql://rosie.db.elephantsql.com:5432/ipslotcr");
+        config.setUsername("ipslotcr");
+        config.setPassword("87xlYrK7AqXosaDu--G1qAhfoImf9GRE");
+        config.setMaximumPoolSize(100);
+        dataSource = new HikariDataSource(config);
+    }
 
     public UserDao() throws SQLException {
     }
 
 
-    //This for registrasia
+    //    This for registrasia
     public void addUser(User user) throws SQLException {
         String add = "insert into users(login,password) values (?,?)";
-        try (PreparedStatement preparedStatement = connect.prepareStatement(add)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(add)) {
             preparedStatement.setString(1, user.getLogin());
             preparedStatement.setString(2, user.getPassword());
             int i = preparedStatement.executeUpdate();
             if (i > 0) System.out.println("User successfully saved");
             else System.out.println("Failed to save the user");
+        } catch (SQLException exception) {
+            exception.printStackTrace();
         }
     }
 
     public void deleteUser(User user) throws SQLException {
         String delete = "DELETE FROM users WHERE login = ?";
-        try (PreparedStatement preparedStatement = connect.prepareStatement(delete)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(delete)) {
             preparedStatement.setString(1, user.getLogin());
             int i = preparedStatement.executeUpdate();
             if (i > 0) System.out.println("user successfully deleted");
             else System.out.println("Failed to delete the user");
+        } catch (SQLException exception) {
+            exception.printStackTrace();
         }
     }
 
     public void deleteUserById(Long userId) throws SQLException {
         String delete = "DELETE FROM users WHERE id = ?";
-        try (PreparedStatement preparedStatement = connect.prepareStatement(delete)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(delete)) {
             preparedStatement.setLong(1, userId);
             int i = preparedStatement.executeUpdate();
             if (i > 0) System.out.println("user successfully deleted");
             else System.out.println("Failed to delete the user");
+        } catch (SQLException exception) {
+            exception.printStackTrace();
         }
     }
 
     public Map<Integer, String> onlyUsersLogin() throws SQLException {
         Map<Integer, String> list = new HashMap<>();
         String get = "select id,login from users";
-        PreparedStatement preparedStatement = connect.prepareStatement(get);
+        Connection connection = dataSource.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(get);
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
             list.put(resultSet.getInt("id"), resultSet.getString("login"));
@@ -62,7 +84,8 @@ public class UserDao {
     //This for login
     public User getOneUser(String login, String password) throws SQLException {
         String getUser = "SELECT * FROM users WHERE login = ? AND password = ?";
-        try (PreparedStatement getUserPre = connect.prepareStatement(getUser)) {
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement getUserPre = connection.prepareStatement(getUser);
             getUserPre.setString(1, login);
             getUserPre.setString(2, password);
 
@@ -85,7 +108,8 @@ public class UserDao {
         String getUser = "select * from users";
         List<User> users = new ArrayList<>();
 
-        PreparedStatement getUserPre = connect.prepareStatement(getUser);
+        Connection connection = dataSource.getConnection();
+        PreparedStatement getUserPre = connection.prepareStatement(getUser);
         ResultSet getUserRes = getUserPre.executeQuery();
 
         while (getUserRes.next()) {
@@ -102,7 +126,8 @@ public class UserDao {
     public User getUserById(long userId) throws SQLException {
         String getUserById = "SELECT * FROM users WHERE id = ?";
 
-        try (PreparedStatement getUserByIdPre = connect.prepareStatement(getUserById)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement getUserByIdPre = connection.prepareStatement(getUserById)) {
             getUserByIdPre.setLong(1, userId);
             ResultSet getUserByIdRes = getUserByIdPre.executeQuery();
 
@@ -120,7 +145,8 @@ public class UserDao {
 
     public void updateUser(User user) throws SQLException {
         String update = "UPDATE users SET login = ?, password = ? WHERE id = ?";
-        try (PreparedStatement preparedStatement = connect.prepareStatement(update)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(update)) {
             preparedStatement.setString(1, user.getLogin());
             preparedStatement.setString(2, user.getPassword());
             preparedStatement.setLong(3, user.getId());

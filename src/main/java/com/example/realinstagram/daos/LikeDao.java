@@ -3,6 +3,8 @@ package com.example.realinstagram.daos;
 import com.example.realinstagram.models.Like;
 import com.example.realinstagram.models.Post;
 import com.example.realinstagram.models.User;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,15 +13,24 @@ import java.util.Map;
 
 public class LikeDao {
     final UserDao userDao;
-    Connection connect = DriverManager.getConnection("jdbc:postgresql://rosie.db.elephantsql.com:5432/ipslotcr", "ipslotcr", "87xlYrK7AqXosaDu--G1qAhfoImf9GRE");
-
 
     public LikeDao(UserDao userDao) throws SQLException {
         this.userDao = userDao;
     }
+    private static final HikariDataSource dataSource;
+
+    static {
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:postgresql://rosie.db.elephantsql.com:5432/ipslotcr");
+        config.setUsername("ipslotcr");
+        config.setPassword("87xlYrK7AqXosaDu--G1qAhfoImf9GRE");
+        config.setMaximumPoolSize(100);
+        dataSource = new HikariDataSource(config);
+    }
 
     public void addLikeToPost(User user,Long idPost) throws SQLException {
         String addLike = "insert into likes(user_id,created_ad,post_id) values (?,current_date,?)";
+        Connection connect = dataSource.getConnection();
         PreparedStatement preparedStatement = connect.prepareStatement(addLike);
         preparedStatement.setLong(1,user.getId());
         preparedStatement.setLong(2,idPost);
@@ -29,6 +40,7 @@ public class LikeDao {
     }
     public void deleteLikeInPost(Long idLike) throws SQLException {
         String deleteLike = "delete from likes where id = ?";
+        Connection connect = dataSource.getConnection();
         PreparedStatement preparedStatement = connect.prepareStatement(deleteLike);
         preparedStatement.setLong(1,idLike);
         int i = preparedStatement.executeUpdate();
@@ -36,6 +48,7 @@ public class LikeDao {
     public List<Like> getAllLikes(Post post) throws SQLException {
         List<Like> likes = new ArrayList<>();
         String getLikes = "select * from likes where post_id = ?";
+        Connection connect = dataSource.getConnection();
         PreparedStatement getLikePre = connect.prepareStatement(getLikes);
         getLikePre.setLong(1, post.getId());
         ResultSet getLikeRes = getLikePre.executeQuery();

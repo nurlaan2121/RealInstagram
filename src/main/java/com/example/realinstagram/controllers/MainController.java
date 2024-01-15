@@ -80,7 +80,6 @@ public class MainController {
                         textlabel.setText("Success");
                         System.out.println(currentUser);
 
-
                         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("homepage.fxml"));
                         try {
                             Scene scene = new Scene(fxmlLoader.load(), 735, 427);
@@ -113,8 +112,6 @@ public class MainController {
             stage.setResizable(false);
             stage.setScene(scene);
             stage.show();
-
-
         });
 
 
