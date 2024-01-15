@@ -9,12 +9,13 @@ import java.util.List;
 import java.util.Map;
 
 public class UserDao {
+    public UserDao(PostDao postDao) throws SQLException {
+        this.postDao = postDao;
+    }
 
+    final PostDao postDao;
 
     Connection connect = DriverManager.getConnection("jdbc:postgresql://rosie.db.elephantsql.com:5432/ipslotcr", "ipslotcr", "87xlYrK7AqXosaDu--G1qAhfoImf9GRE");
-
-    public UserDao() throws SQLException {
-    }
 
 
     //This for registrasia
@@ -59,6 +60,7 @@ public class UserDao {
             user.setId((long) getUserRes.getInt("id"));
             user.setLogin(getUserRes.getString("login"));
             user.setPassword(getUserRes.getString("password"));
+            user.setPosts(postDao.getAllPostInUser(user));
         }
         return user;
     }
@@ -76,7 +78,7 @@ public class UserDao {
             user.setId((long) getUserRes.getInt("id"));
             user.setLogin(getUserRes.getString("login"));
             user.setPassword(getUserRes.getString("password"));
-
+            user.setPosts(postDao.getAllPostInUser(user));
             users.add(user);
         }
         return users;
@@ -94,7 +96,7 @@ public class UserDao {
                 user.setId(userId);
                 user.setLogin(getUserByIdRes.getString("login"));
                 user.setPassword(getUserByIdRes.getString("password"));
-
+                user.setPosts(postDao.getAllPostInUser(user));
                 return user;
             }
         }
