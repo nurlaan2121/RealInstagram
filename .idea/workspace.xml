@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="This is first Commit">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/44f27ad9-1c22-4e50-81d5-f5324a24fd66.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/44f27ad9-1c22-4e50-81d5-f5324a24fd66.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/PostDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/PostImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/PostImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_01_2024_16_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_01_2024_16_13__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/UserImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +30,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -52,29 +55,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Maven.RealInstagram [clean].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Nurislam",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/User/IdeaProjects/RealInstagram/src/main/java/com/example/realinstagram",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RealInstagram [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Nurislam&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/User/IdeaProjects/RealInstagram/src/main/java/com/example/realinstagram&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\IdeaProjects\RealInstagram\src\main\resources\com\example\realinstagram\myimages" />
