@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="427" prefWidth="725" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realinstagram.controllers.Recomandation">
+   <children>
+      <ImageView fitHeight="427.0" fitWidth="725.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@myimages/recomandation.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="148.0" layoutY="65.0" prefHeight="327.0" prefWidth="428.0">
+         <children>
+            <Label fx:id="onelbl" layoutX="6.0" layoutY="-1.0" prefHeight="90.0" prefWidth="421.0">
+               <font>
+                  <Font name="Bell MT Italic" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="twolbl" layoutX="8.0" layoutY="119.0" prefHeight="90.0" prefWidth="421.0">
+               <font>
+                  <Font name="Bell MT Italic" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="threelbl" layoutX="14.0" layoutY="237.0" prefHeight="90.0" prefWidth="421.0">
+               <font>
+                  <Font name="Bell MT Italic" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="restartbtn" layoutX="583.0" layoutY="21.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="77.0" text="Restart" />
+      <Button fx:id="homebtn" layoutX="19.0" layoutY="11.0" mnemonicParsing="false" opacity="0.0" prefHeight="46.0" prefWidth="49.0" />
+      <Button fx:id="searchbtn" layoutX="19.0" layoutY="80.0" mnemonicParsing="false" opacity="0.0" prefHeight="46.0" prefWidth="49.0" />
+      <Button fx:id="addpostbtn" layoutX="19.0" layoutY="148.0" mnemonicParsing="false" opacity="0.0" prefHeight="46.0" prefWidth="49.0" />
+      <Button fx:id="chatbtn" layoutX="19.0" layoutY="221.0" mnemonicParsing="false" opacity="0.0" prefHeight="46.0" prefWidth="49.0" />
+      <Button fx:id="recomandationbtn" layoutX="19.0" layoutY="294.0" mnemonicParsing="false" opacity="0.0" prefHeight="46.0" prefWidth="49.0" />
+      <Button fx:id="profilebtn" layoutX="19.0" layoutY="369.0" mnemonicParsing="false" opacity="0.0" prefHeight="46.0" prefWidth="49.0" />
+   </children>
+</AnchorPane>

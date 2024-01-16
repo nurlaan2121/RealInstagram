@@ -11,7 +11,7 @@ public interface UserInterface {
     String deleteUser(User user);
     User logIn(String login, String password);
     List<User> getAllUsers();
-    User findUserById(Long id);
+    User findUserById(String login) throws SQLException;
 }
 
 // home -> posts

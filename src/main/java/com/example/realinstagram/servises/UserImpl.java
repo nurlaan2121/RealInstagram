@@ -75,14 +75,8 @@ public class UserImpl implements UserInterface {
     }
 
     @Override
-    public User findUserById(Long id) {
-        try {
-            if (checkUserId(id)) {
-                return userDao.getUserById(id);
-            } else throw new NotFound("user with id: '" + id + "' not found");
-        } catch (SQLException | NotFound e) {
-            throw new RuntimeException(e);
-        }
+    public User findUserById(String login) throws SQLException {
+        return userDao.getUserById(login);
     }
 
     private boolean checkUniq(String str) throws SQLException {

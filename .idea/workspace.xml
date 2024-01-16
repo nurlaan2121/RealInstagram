@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="This is first Commitr">
+    <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="All ideal">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Addpost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Recomandation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Searchpage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/addpost.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/recomendation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/searchpage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Homepage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/interfaces/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/interfaces/UserInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/UserImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,44 +68,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Maven.RealInstagram [clean,install].executor": "Run",
-    "Maven.RealInstagram [clean].executor": "Run",
-    "Maven.RealInstagram [install].executor": "Run",
-    "Maven.RealInstagram [javafx:r].executor": "Run",
-    "Maven.RealInstagram [mvn,clean,install].executor": "Run",
-    "Maven.RealInstagram [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
-    "Maven.RealInstagram [test].executor": "Run",
-    "Maven.Unknown [clean].executor": "Run",
-    "Maven.Unknown [deploy].executor": "Run",
-    "Maven.demo [clean].executor": "Run",
-    "Maven.demo [install].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/addButtons",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/User/IdeaProjects/RealInstagram/src/main/java/com/example/realinstagram",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RealInstagram [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RealInstagram [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RealInstagram [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RealInstagram [javafx:r].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RealInstagram [mvn,clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RealInstagram [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RealInstagram [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Unknown [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Unknown [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/User/IdeaProjects/RealInstagram/src/main/java/com/example/realinstagram&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\IdeaProjects\RealInstagram\src\main\resources\com\example\realinstagram\myimages" />
@@ -116,7 +125,7 @@
       <module name="RealInstagram" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.realinstagram.*" />
+          <option name="PATTERN" value="com.example.realinstagram.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,6 +135,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -160,6 +170,7 @@
       <workItem from="1705323933944" duration="314000" />
       <workItem from="1705324378002" duration="6381000" />
       <workItem from="1705332798653" duration="1541000" />
+      <workItem from="1705371868789" duration="6300000" />
     </task>
     <task id="LOCAL-00001" summary="This is first Commit">
       <option name="closed" value="true" />
@@ -206,6 +217,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feature/addTwoIcons" />

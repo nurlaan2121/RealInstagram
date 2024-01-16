@@ -1,11 +1,6 @@
 package com.example.realinstagram.controllers;
 
 import com.example.realinstagram.Main;
-import com.example.realinstagram.daos.CommentDao;
-import com.example.realinstagram.daos.LikeDao;
-import com.example.realinstagram.daos.PostDao;
-import com.example.realinstagram.daos.UserDao;
-import com.example.realinstagram.servises.UserImpl;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,15 +10,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class Homepage {
-    UserDao userDao = new UserDao();
-    CommentDao commentDao = new CommentDao(userDao);
-    LikeDao likeDao = new LikeDao(userDao);
-    PostDao postDao = new PostDao(userDao, likeDao, commentDao);
-    UserImpl user = new UserImpl(userDao);
+public class Recomandation {
 
     @FXML
     private ResourceBundle resources;
@@ -38,35 +27,32 @@ public class Homepage {
     private Button chatbtn;
 
     @FXML
-    private Label commentCountLbl;
-
-    @FXML
     private Button homebtn;
 
     @FXML
-    private Label likeCountLbl;
+    private Label onelbl;
 
     @FXML
-    private Button myprofilebtn;
+    private Button profilebtn;
 
     @FXML
-    private Label postLbl;
+    private Button recomandationbtn;
 
     @FXML
-    private Button recomendationbtn;
+    private Button restartbtn;
 
     @FXML
     private Button searchbtn;
 
     @FXML
-    private Label userNameLbl;
+    private Label threelbl;
 
-    public Homepage() throws SQLException {
-
-    }
+    @FXML
+    private Label twolbl;
 
     @FXML
     void initialize() {
+
         searchbtn.setOnAction(actionEvent -> {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("searchpage.fxml"));
             Scene scene = null;
@@ -95,22 +81,6 @@ public class Homepage {
             stage.setScene(scene);
             stage.show();
         });
-        recomendationbtn.setOnAction(actionEvent -> {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("recomendation.fxml"));
-            Scene scene = null;
-            try {
-                scene = new Scene(fxmlLoader.load(), 735, 427);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Stage stage = new Stage();
-            stage.setTitle("Hello!");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            stage.show();
-        });
-
-
     }
 
 }

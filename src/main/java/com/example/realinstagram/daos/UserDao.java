@@ -111,17 +111,37 @@ public class UserDao {
         return users;
     }
 
-    public User getUserById(long userId) throws SQLException {
-        String getUserById = "SELECT * FROM users WHERE id = ?";
+    public User getUserById(String login) throws SQLException {
+        String getUserById = "SELECT * FROM users WHERE login = ?";
 
         try (
                 PreparedStatement getUserByIdPre = connection.prepareStatement(getUserById)) {
-            getUserByIdPre.setLong(1, userId);
+            getUserByIdPre.setString(1, login);
             ResultSet getUserByIdRes = getUserByIdPre.executeQuery();
 
             if (getUserByIdRes.next()) {
                 User user = new User();
-                user.setId(userId);
+                user.setId((long) getUserByIdRes.getInt("id"));
+                user.setLogin(getUserByIdRes.getString("login"));
+                user.setPassword(getUserByIdRes.getString("password"));
+
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User getUserById(Long id) throws SQLException {
+        String getUserById = "SELECT * FROM users WHERE id = ?";
+
+        try (
+                PreparedStatement getUserByIdPre = connection.prepareStatement(getUserById)) {
+            getUserByIdPre.setLong(1, id);
+            ResultSet getUserByIdRes = getUserByIdPre.executeQuery();
+
+            if (getUserByIdRes.next()) {
+                User user = new User();
+                user.setId(id);
                 user.setLogin(getUserByIdRes.getString("login"));
                 user.setPassword(getUserByIdRes.getString("password"));
 

@@ -60,6 +60,7 @@ public class MainController {
     LikeDao likeDao = new LikeDao(userDao);
     PostDao postDao = new PostDao(userDao, likeDao, commentDao);
     UserImpl user = new UserImpl(userDao);
+    public  static User currentUser = null;
 
     @FXML
     void initialize() {
@@ -68,7 +69,6 @@ public class MainController {
         MediaPlayer mediaPlayer = new MediaPlayer(media);
 
         loginbtn.setOnAction(actionEvent -> {
-            User currentUser = null;
             mediaPlayer.stop();
             mediaPlayer.play();
             if (MyChecks.allcheck(loginfld.getText())) {
