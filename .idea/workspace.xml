@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="All ideal">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Addpost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Recomandation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Searchpage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/addpost.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/recomendation.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/searchpage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Homepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/interfaces/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/interfaces/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/UserImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="All ideal2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +157,7 @@
       <workItem from="1705323933944" duration="314000" />
       <workItem from="1705324378002" duration="6381000" />
       <workItem from="1705332798653" duration="1541000" />
-      <workItem from="1705371868789" duration="6300000" />
+      <workItem from="1705371868789" duration="6431000" />
     </task>
     <task id="LOCAL-00001" summary="This is first Commit">
       <option name="closed" value="true" />
@@ -212,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705335133259</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="All ideal2">
+      <option name="closed" value="true" />
+      <created>1705378292516</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705378292516</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +228,7 @@
     <MESSAGE value="feature/addTwoIcons" />
     <MESSAGE value="This is first Commit" />
     <MESSAGE value="This is first Commitr" />
-    <option name="LAST_COMMIT_MESSAGE" value="This is first Commitr" />
+    <MESSAGE value="All ideal2" />
+    <option name="LAST_COMMIT_MESSAGE" value="All ideal2" />
   </component>
 </project>

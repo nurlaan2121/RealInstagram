@@ -17,6 +17,8 @@ public class Recomandation {
     @FXML
     private ResourceBundle resources;
 
+
+
     @FXML
     private URL location;
 
@@ -52,6 +54,8 @@ public class Recomandation {
 
     @FXML
     void initialize() {
+
+
 
         searchbtn.setOnAction(actionEvent -> {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("searchpage.fxml"));
