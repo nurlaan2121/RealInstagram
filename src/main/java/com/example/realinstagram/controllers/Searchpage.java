@@ -5,8 +5,11 @@ import com.example.realinstagram.daos.CommentDao;
 import com.example.realinstagram.daos.LikeDao;
 import com.example.realinstagram.daos.PostDao;
 import com.example.realinstagram.daos.UserDao;
+import com.example.realinstagram.models.Like;
+import com.example.realinstagram.models.Post;
 import com.example.realinstagram.models.User;
 import com.example.realinstagram.servises.UserImpl;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,18 +23,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Searchpage {
-
-    @FXML
-    private ResourceBundle resources;
     UserDao userDao = new UserDao();
     CommentDao commentDao = new CommentDao(userDao);
     LikeDao likeDao = new LikeDao(userDao);
     PostDao postDao = new PostDao(userDao, likeDao, commentDao);
     UserImpl user = new UserImpl(userDao);
+
+    @FXML
+    private ResourceBundle resources;
 
     @FXML
     private URL location;
@@ -46,7 +51,19 @@ public class Searchpage {
     private Button chatbtn;
 
     @FXML
+    private Button commentbtn;
+
+    @FXML
+    private Label countlikecomment;
+
+    @FXML
+    private Label countlikelbl;
+
+    @FXML
     private Button homebtn;
+
+    @FXML
+    private Button likebtn;
 
     @FXML
     private TextField loginfld;
@@ -65,6 +82,11 @@ public class Searchpage {
 
     @FXML
     private Label usernamelbl;
+
+    @FXML
+    void opencomment(ActionEvent event) {
+
+    }
 
     public Searchpage() throws SQLException {
     }
@@ -87,7 +109,43 @@ public class Searchpage {
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
+                List<Post> allPostInUser;
                 if (userById != null) {
+                    try {
+                        allPostInUser = postDao.getAllPostInUser(userById);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    if (!allPostInUser.isEmpty()) {
+                        allPostInUser.sort(comparator);
+                        Post post = allPostInUser.get(0);
+                        postlbl.setText(post.getPost());
+                        try {
+                            List<Like> allLikes = likeDao.getAllLikes(post);
+                            countlikelbl.setText(String.valueOf(allLikes.size()));
+                            countlikecomment.setText(String.valueOf(allLikes.size()));
+                            likebtn.setOnAction(actionEvent1 -> {
+                                try {
+                                    likeDao.addLikeToPost(MainController.currentUser, post.getId());
+                                } catch (SQLException e) {
+                                    throw new RuntimeException(e);
+                                }
+
+//                                for (int i = 0; i < post.getLikes().size(); i++) {
+//                                    if (post.getLikes().get(i).getUser().equalsIgnoreCase(MainController.currentUser.getLogin())) {
+//                                        try {
+//                                        } catch (SQLException e) {
+//                                            throw new RuntimeException(e);
+//                                        }
+//                                    }
+//                                }
+                            });
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
+
+
+                    }
                     usernamelbl.setText(userById.getLogin());
                     usernamelbl.setStyle("-fx-background-color: blue;");
                 } else {
@@ -140,5 +198,13 @@ public class Searchpage {
 
 
     }
+
+    Comparator<Post> comparator = new Comparator<Post>() {
+
+        @Override
+        public int compare(Post o1, Post o2) {
+            return o2.getLikes().size() - o1.getLikes().size();
+        }
+    };
 
 }

@@ -20,23 +20,26 @@ public class LikeDao {
     }
 
 
-    public void addLikeToPost(User user,Long idPost) throws SQLException {
+    public void addLikeToPost(User user, Long idPost) throws SQLException {
         String addLike = "insert into likes(user_id,created_ad,post_id) values (?,current_date,?)";
         Connection connect = UserDao.connection;
         PreparedStatement preparedStatement = connect.prepareStatement(addLike);
-        preparedStatement.setLong(1,user.getId());
-        preparedStatement.setLong(2,idPost);
+        preparedStatement.setLong(1, user.getId());
+        preparedStatement.setLong(2, idPost);
         int i = preparedStatement.executeUpdate();
 
 
     }
+
     public void deleteLikeInPost(Long idLike) throws SQLException {
         String deleteLike = "delete from likes where id = ?";
         Connection connect = UserDao.connection;
         PreparedStatement preparedStatement = connect.prepareStatement(deleteLike);
-        preparedStatement.setLong(1,idLike);
+        preparedStatement.setLong(1, idLike);
         int i = preparedStatement.executeUpdate();
     }
+
+
     public List<Like> getAllLikes(Post post) throws SQLException {
         List<Like> likes = new ArrayList<>();
         String getLikes = "select * from likes where post_id = ?";
@@ -51,7 +54,7 @@ public class LikeDao {
             Map<Integer, String> integerStringMap = userDao.onlyUsersLogin();
             String userLogin = integerStringMap.get(userId);
             like.setUser(userLogin);
-            like.setCreatedAd(getLikeRes.getDate("data"));
+            like.setCreatedAd(getLikeRes.getDate("created_ad"));
             likes.add(like);
         }
         return likes;

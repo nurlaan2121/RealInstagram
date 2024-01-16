@@ -7,7 +7,6 @@ import com.example.realinstagram.models.Post;
 import com.example.realinstagram.models.User;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PostImpl implements PostInterface {
@@ -71,6 +70,13 @@ public class PostImpl implements PostInterface {
     public List<Post> findPostByUser(User user) {
         try {
             return postDao.getAllPostInUser(user);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public List<Post> getAllPosts()  {
+        try {
+            return postDao.getAllPosts();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
