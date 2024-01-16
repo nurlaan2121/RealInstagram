@@ -51,7 +51,7 @@ public class CommentDao {
             Map<Integer, String> integerStringMap = userDao.onlyUsersLogin();
             String userLogin = integerStringMap.get(userId);
             comment.setUserLogin(userLogin);
-            comment.setCreatedAt(resultSet.getDate("data"));
+            comment.setCreatedAt(resultSet.getDate("created_ad"));
             comments.add(comment);
         }
         return comments;
