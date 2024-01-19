@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="All ideal2">
+    <list default="true" id="dc363742-ad4a-4939-9538-52519d07f7af" name="Changes" comment="added recomendation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Chat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Onechat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/ChatDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/chat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/onechat.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/44f27ad9-1c22-4e50-81d5-f5324a24fd66.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/44f27ad9-1c22-4e50-81d5-f5324a24fd66.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/44f27ad9-1c22-4e50-81d5-f5324a24fd66/storage_v2/_src_/database/ipslotcr.1MJ4ig/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/44f27ad9-1c22-4e50-81d5-f5324a24fd66/storage_v2/_src_/database/ipslotcr.1MJ4ig/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Recomandation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Recomandation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Homepage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Searchpage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/Searchpage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/CommentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/LikeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/LikeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/PostImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/PostImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/searchpage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/realinstagram/searchpage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/ChatImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/realinstagram/servises/ChatImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +32,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="feature/recomendation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -80,7 +87,7 @@
     "Maven.demo [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/recomendation",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/User/IdeaProjects/RealInstagram/src/main/java/com/example/realinstagram",
@@ -134,6 +141,7 @@
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -167,6 +175,13 @@
       <workItem from="1705332798653" duration="1541000" />
       <workItem from="1705371868789" duration="6431000" />
       <workItem from="1705381816595" duration="6539000" />
+      <workItem from="1705392300164" duration="20000" />
+      <workItem from="1705477900843" duration="1098000" />
+      <workItem from="1705488549426" duration="1492000" />
+      <workItem from="1705504275633" duration="689000" />
+      <workItem from="1705505781854" duration="9773000" />
+      <workItem from="1705583248084" duration="1007000" />
+      <workItem from="1705590730200" duration="11757000" />
     </task>
     <task id="LOCAL-00001" summary="This is first Commit">
       <option name="closed" value="true" />
@@ -246,6 +261,53 @@
     <MESSAGE value="This is first Commit" />
     <MESSAGE value="This is first Commitr" />
     <MESSAGE value="All ideal2" />
-    <option name="LAST_COMMIT_MESSAGE" value="All ideal2" />
+    <MESSAGE value="added recomendation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added recomendation" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/ChatDao.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/ChatDao.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/ChatDao.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/ChatDao.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/ChatDao.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/ChatDao.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/ChatDao.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/ChatDao.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

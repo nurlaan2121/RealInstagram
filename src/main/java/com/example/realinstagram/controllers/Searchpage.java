@@ -5,6 +5,7 @@ import com.example.realinstagram.daos.CommentDao;
 import com.example.realinstagram.daos.LikeDao;
 import com.example.realinstagram.daos.PostDao;
 import com.example.realinstagram.daos.UserDao;
+import com.example.realinstagram.models.Comment;
 import com.example.realinstagram.models.Like;
 import com.example.realinstagram.models.Post;
 import com.example.realinstagram.models.User;
@@ -122,8 +123,9 @@ public class Searchpage {
                         postlbl.setText(post.getPost());
                         try {
                             List<Like> allLikes = likeDao.getAllLikes(post);
+                            List<Comment> allComments = commentDao.getAllComments(post);
                             countlikelbl.setText(String.valueOf(allLikes.size()));
-                            countlikecomment.setText(String.valueOf(allLikes.size()));
+                            countlikecomment.setText(String.valueOf(allComments.size()));
                             likebtn.setOnAction(actionEvent1 -> {
                                 try {
                                     likeDao.addLikeToPost(MainController.currentUser, post.getId());

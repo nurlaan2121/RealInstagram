@@ -1,0 +1,68 @@
+Index: src/main/resources/com/example/realinstagram/searchpage.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane prefHeight=\"427\" prefWidth=\"725\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\"\r\n            fx:controller=\"com.example.realinstagram.controllers.Searchpage\">\r\n    <children>\r\n        <ImageView fitHeight=\"427.0\" fitWidth=\"726.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n            <image>\r\n                <Image url=\"@myimages/search.png\"/>\r\n            </image>\r\n        </ImageView>\r\n        <AnchorPane prefHeight=\"427.0\" prefWidth=\"87.0\">\r\n            <children>\r\n                <Button fx:id=\"homebtn\" layoutX=\"18.0\" layoutY=\"6.0\" mnemonicParsing=\"false\" opacity=\"0.0\"\r\n                        prefHeight=\"53.0\" prefWidth=\"55.0\"/>\r\n                <Button fx:id=\"searchbtn\" layoutX=\"18.0\" layoutY=\"77.0\" mnemonicParsing=\"false\" opacity=\"0.0\"\r\n                        prefHeight=\"53.0\" prefWidth=\"55.0\"/>\r\n                <Button fx:id=\"addpostbtn\" layoutX=\"16.0\" layoutY=\"143.0\" mnemonicParsing=\"false\" opacity=\"0.0\"\r\n                        prefHeight=\"53.0\" prefWidth=\"55.0\"/>\r\n                <Button fx:id=\"chatbtn\" layoutX=\"16.0\" layoutY=\"214.0\" mnemonicParsing=\"false\" opacity=\"0.0\"\r\n                        prefHeight=\"53.0\" prefWidth=\"55.0\"/>\r\n                <Button fx:id=\"recamendationbtn\" layoutX=\"16.0\" layoutY=\"293.0\" mnemonicParsing=\"false\" opacity=\"0.0\"\r\n                        prefHeight=\"53.0\" prefWidth=\"55.0\"/>\r\n                <Button fx:id=\"profilebtn\" layoutX=\"18.0\" layoutY=\"360.0\" mnemonicParsing=\"false\" opacity=\"0.0\"\r\n                        prefHeight=\"53.0\" prefWidth=\"55.0\"/>\r\n            </children>\r\n        </AnchorPane>\r\n        <AnchorPane layoutX=\"163.0\" layoutY=\"54.0\" prefHeight=\"333.0\" prefWidth=\"473.0\">\r\n            <children>\r\n                <TextField fx:id=\"loginfld\" layoutX=\"106.0\" layoutY=\"14.0\" prefHeight=\"39.0\" prefWidth=\"262.0\"\r\n                           promptText=\"               write login\">\r\n                    <font>\r\n                        <Font size=\"18.0\"/>\r\n                    </font>\r\n                </TextField>\r\n                <Button fx:id=\"btn\" layoutX=\"385.0\" layoutY=\"21.0\" mnemonicParsing=\"false\"\r\n                        style=\"-fx-background-color: blue;\" text=\"Search\" textFill=\"WHITE\"/>\r\n                <Label fx:id=\"usernamelbl\" layoutX=\"38.0\" layoutY=\"69.0\" prefHeight=\"53.0\" prefWidth=\"399.0\"\r\n                       style=\"-fx-background-color: white;\" textFill=\"WHITE\"/>\r\n                <Label fx:id=\"postlbl\" layoutX=\"38.0\" layoutY=\"122.0\" prefHeight=\"126.0\" prefWidth=\"399.0\"\r\n                       style=\"-fx-background-color: white;\" textFill=\"WHITE\"/>\r\n            </children>\r\n        </AnchorPane>\r\n    </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/realinstagram/searchpage.fxml b/src/main/resources/com/example/realinstagram/searchpage.fxml
+--- a/src/main/resources/com/example/realinstagram/searchpage.fxml	
++++ b/src/main/resources/com/example/realinstagram/searchpage.fxml	
+@@ -8,44 +8,33 @@
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.text.Font?>
+ 
+-<AnchorPane prefHeight="427" prefWidth="725" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+-            fx:controller="com.example.realinstagram.controllers.Searchpage">
++<AnchorPane prefHeight="427" prefWidth="725" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realinstagram.controllers.Searchpage">
+     <children>
+         <ImageView fitHeight="427.0" fitWidth="726.0" pickOnBounds="true" preserveRatio="true">
+             <image>
+-                <Image url="@myimages/search.png"/>
++                <Image url="@myimages/search.png" />
+             </image>
+         </ImageView>
+         <AnchorPane prefHeight="427.0" prefWidth="87.0">
+             <children>
+-                <Button fx:id="homebtn" layoutX="18.0" layoutY="6.0" mnemonicParsing="false" opacity="0.0"
+-                        prefHeight="53.0" prefWidth="55.0"/>
+-                <Button fx:id="searchbtn" layoutX="18.0" layoutY="77.0" mnemonicParsing="false" opacity="0.0"
+-                        prefHeight="53.0" prefWidth="55.0"/>
+-                <Button fx:id="addpostbtn" layoutX="16.0" layoutY="143.0" mnemonicParsing="false" opacity="0.0"
+-                        prefHeight="53.0" prefWidth="55.0"/>
+-                <Button fx:id="chatbtn" layoutX="16.0" layoutY="214.0" mnemonicParsing="false" opacity="0.0"
+-                        prefHeight="53.0" prefWidth="55.0"/>
+-                <Button fx:id="recamendationbtn" layoutX="16.0" layoutY="293.0" mnemonicParsing="false" opacity="0.0"
+-                        prefHeight="53.0" prefWidth="55.0"/>
+-                <Button fx:id="profilebtn" layoutX="18.0" layoutY="360.0" mnemonicParsing="false" opacity="0.0"
+-                        prefHeight="53.0" prefWidth="55.0"/>
++                <Button fx:id="homebtn" layoutX="18.0" layoutY="6.0" mnemonicParsing="false" opacity="0.0" prefHeight="53.0" prefWidth="55.0" />
++                <Button fx:id="searchbtn" layoutX="18.0" layoutY="77.0" mnemonicParsing="false" opacity="0.0" prefHeight="53.0" prefWidth="55.0" />
++                <Button fx:id="addpostbtn" layoutX="16.0" layoutY="143.0" mnemonicParsing="false" opacity="0.0" prefHeight="53.0" prefWidth="55.0" />
++                <Button fx:id="chatbtn" layoutX="16.0" layoutY="214.0" mnemonicParsing="false" opacity="0.0" prefHeight="53.0" prefWidth="55.0" />
++                <Button fx:id="recamendationbtn" layoutX="16.0" layoutY="293.0" mnemonicParsing="false" opacity="0.0" prefHeight="53.0" prefWidth="55.0" />
++                <Button fx:id="profilebtn" layoutX="18.0" layoutY="360.0" mnemonicParsing="false" opacity="0.0" prefHeight="53.0" prefWidth="55.0" />
+             </children>
+         </AnchorPane>
+         <AnchorPane layoutX="163.0" layoutY="54.0" prefHeight="333.0" prefWidth="473.0">
+             <children>
+-                <TextField fx:id="loginfld" layoutX="106.0" layoutY="14.0" prefHeight="39.0" prefWidth="262.0"
+-                           promptText="               write login">
++                <TextField fx:id="loginfld" layoutX="106.0" layoutY="14.0" prefHeight="39.0" prefWidth="262.0" promptText="               write login">
+                     <font>
+-                        <Font size="18.0"/>
++                        <Font size="18.0" />
+                     </font>
+                 </TextField>
+-                <Button fx:id="btn" layoutX="385.0" layoutY="21.0" mnemonicParsing="false"
+-                        style="-fx-background-color: blue;" text="Search" textFill="WHITE"/>
+-                <Label fx:id="usernamelbl" layoutX="38.0" layoutY="69.0" prefHeight="53.0" prefWidth="399.0"
+-                       style="-fx-background-color: white;" textFill="WHITE"/>
+-                <Label fx:id="postlbl" layoutX="38.0" layoutY="122.0" prefHeight="126.0" prefWidth="399.0"
+-                       style="-fx-background-color: white;" textFill="WHITE"/>
++                <Button fx:id="btn" layoutX="385.0" layoutY="21.0" mnemonicParsing="false" style="-fx-background-color: blue;" text="Search" textFill="WHITE" />
++                <Label fx:id="usernamelbl" layoutX="38.0" layoutY="69.0" prefHeight="53.0" prefWidth="399.0" style="-fx-background-color: white;" textFill="WHITE" />
++                <Label fx:id="postlbl" layoutX="38.0" layoutY="122.0" prefHeight="126.0" prefWidth="399.0" style="-fx-background-color: white;" textFill="WHITE" />
+             </children>
+         </AnchorPane>
+     </children>

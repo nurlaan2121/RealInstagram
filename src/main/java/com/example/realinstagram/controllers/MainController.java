@@ -74,10 +74,9 @@ public class MainController {
             if (MyChecks.allcheck(loginfld.getText())) {
                 if (MyChecks.allcheck(passwordfld.getText())) {
                     currentUser = user.logIn(loginfld.getText(), passwordfld.getText());
-                    System.out.println(currentUser);
+
                     if (currentUser != null) {
                         textlabel.setText("Success");
-                        System.out.println(currentUser);
 
                         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("homepage.fxml"));
                         try {

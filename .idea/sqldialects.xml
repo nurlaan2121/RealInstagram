@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/Main.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/controllers/MainController.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/ChatDao.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/CommentDao.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/LikeDao.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/example/realinstagram/daos/PostDao.java" dialect="GenericSQL" />

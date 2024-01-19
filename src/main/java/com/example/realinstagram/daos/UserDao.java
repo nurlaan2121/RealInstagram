@@ -83,7 +83,6 @@ public class UserDao {
                 user.setId((long) getUserRes.getInt("id"));
                 user.setLogin(getUserRes.getString("login"));
                 user.setPassword(getUserRes.getString("password"));
-                System.out.println(user);
                 return user;
             }
         }

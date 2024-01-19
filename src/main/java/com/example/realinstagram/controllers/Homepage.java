@@ -109,6 +109,20 @@ public class Homepage {
             stage.setScene(scene);
             stage.show();
         });
+        chatbtn.setOnAction(actionEvent -> {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("chat.fxml"));
+            Scene scene = null;
+            try {
+                scene = new Scene(fxmlLoader.load(), 735, 427);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Stage stage = new Stage();
+            stage.setTitle("Hello!");
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
+        });
 
 
     }
