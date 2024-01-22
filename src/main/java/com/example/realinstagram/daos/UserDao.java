@@ -150,11 +150,11 @@ public class UserDao {
         return null;
     }
 
-    public void updateUser(User user) throws SQLException {
+    public void updateUser(User user,String login,String password) throws SQLException {
         String update = "UPDATE users SET login = ?, password = ? WHERE id = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(update)) {
-            preparedStatement.setString(1, user.getLogin());
-            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setString(1, login);
+            preparedStatement.setString(2, password);
             preparedStatement.setLong(3, user.getId());
             int i = preparedStatement.executeUpdate();
             if (i > 0) System.out.println("user successfully updated");

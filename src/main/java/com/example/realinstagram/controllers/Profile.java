@@ -5,6 +5,8 @@ import com.example.realinstagram.daos.CommentDao;
 import com.example.realinstagram.daos.LikeDao;
 import com.example.realinstagram.daos.PostDao;
 import com.example.realinstagram.daos.UserDao;
+import com.example.realinstagram.models.Like;
+import com.example.realinstagram.models.Post;
 import com.example.realinstagram.servises.UserImpl;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,17 +18,18 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
-public class Homepage {
+public class Profile {
+
+    @FXML
+    private ResourceBundle resources;
     UserDao userDao = new UserDao();
     CommentDao commentDao = new CommentDao(userDao);
     LikeDao likeDao = new LikeDao(userDao);
     PostDao postDao = new PostDao(userDao, likeDao, commentDao);
     UserImpl user = new UserImpl(userDao);
-
-    @FXML
-    private ResourceBundle resources;
 
     @FXML
     private URL location;
@@ -38,19 +41,19 @@ public class Homepage {
     private Button chatbtn;
 
     @FXML
-    private Label commentCountLbl;
+    private Label friendslbl;
 
     @FXML
     private Button homebtn;
 
     @FXML
-    private Label likeCountLbl;
+    private Label likescountlbl;
 
     @FXML
-    private Button myprofilebtn;
+    private Label postscountlbl;
 
     @FXML
-    private Label postLbl;
+    private Button profilbtn;
 
     @FXML
     private Button recomendationbtn;
@@ -59,28 +62,36 @@ public class Homepage {
     private Button searchbtn;
 
     @FXML
-    private Label userNameLbl;
+    private Button updatebtn;
 
-    public Homepage() throws SQLException {
+    @FXML
+    private Label usernamelbl;
 
+    public Profile() throws SQLException {
     }
 
     @FXML
     void initialize() {
-        searchbtn.setOnAction(actionEvent -> {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("searchpage.fxml"));
-            Scene scene = null;
-            try {
-                scene = new Scene(fxmlLoader.load(), 735, 427);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+        usernamelbl.setText(MainController.currentUser.getLogin());
+        int countLike =0;
+        int countPosts =0;
+        try {
+            List<Post> allPostInUser = postDao.getAllPostInUser(MainController.currentUser);
+            countPosts += allPostInUser.size();
+            for (int i = 0; i < allPostInUser.size(); i++) {
+                Post post = allPostInUser.get(i);
+
+                List<Like> allLikes = likeDao.getAllLikes(post);
+                countLike+=allLikes.size();
+
             }
-            Stage stage = new Stage();
-            stage.setTitle("Hello!");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            stage.show();
-        });
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        likescountlbl.setText(String.valueOf(countLike));
+        postscountlbl.setText(String.valueOf(countPosts));
+
+
         addpostbtn.setOnAction(actionEvent -> {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("addpost.fxml"));
             Scene scene = null;
@@ -95,8 +106,8 @@ public class Homepage {
             stage.setScene(scene);
             stage.show();
         });
-        recomendationbtn.setOnAction(actionEvent -> {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("recomendation.fxml"));
+        searchbtn.setOnAction(actionEvent -> {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("searchpage.fxml"));
             Scene scene = null;
             try {
                 scene = new Scene(fxmlLoader.load(), 735, 427);
@@ -109,35 +120,32 @@ public class Homepage {
             stage.setScene(scene);
             stage.show();
         });
-        chatbtn.setOnAction(actionEvent -> {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("chat.fxml"));
-            Scene scene = null;
+        homebtn.setOnAction(actionEvent -> {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("homepage.fxml"));
             try {
-                scene = new Scene(fxmlLoader.load(), 735, 427);
+                Scene scene = new Scene(fxmlLoader.load(), 735, 427);
+                Stage stage = new Stage();
+                stage.setTitle("Hello!");
+                stage.setResizable(false);
+                stage.setScene(scene);
+                stage.show();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            Stage stage = new Stage();
-            stage.setTitle("Hello!");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            stage.show();
         });
-        myprofilebtn.setOnAction(actionEvent -> {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("profile.fxml"));
-            Scene scene = null;
+        updatebtn.setOnAction(actionEvent -> {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("updateprofile.fxml"));
             try {
-                scene = new Scene(fxmlLoader.load(), 735, 427);
+                Scene scene = new Scene(fxmlLoader.load(), 735, 427);
+                Stage stage = new Stage();
+                stage.setTitle("Hello!");
+                stage.setResizable(false);
+                stage.setScene(scene);
+                stage.show();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            Stage stage = new Stage();
-            stage.setTitle("Hello!");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            stage.show();
         });
-
     }
 
 }

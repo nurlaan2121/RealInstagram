@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="427" prefWidth="725" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realinstagram.controllers.Updateprofile">
+   <children>
+      <ImageView fitHeight="427.0" fitWidth="726.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@myimages/8.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="homebtn" layoutX="21.0" layoutY="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="53.0" text="Button" />
+      <Button fx:id="searchbtn" layoutX="21.0" layoutY="82.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="53.0" text="Button" />
+      <Button fx:id="addpostbtn" layoutX="21.0" layoutY="150.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="53.0" text="Button" />
+      <Button fx:id="chatbtn" layoutX="21.0" layoutY="214.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="53.0" text="Button" />
+      <Button fx:id="recomandationbtn" layoutX="21.0" layoutY="298.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="53.0" text="Button" />
+      <Button layoutX="21.0" layoutY="365.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="53.0" text="Button" />
+      <Label fx:id="usernamelbl" layoutX="415.0" layoutY="135.0" prefHeight="48.0" prefWidth="254.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <TextField fx:id="loginfld" layoutX="115.0" layoutY="60.0" prefHeight="41.0" prefWidth="279.0" promptText="write new username">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="passwordfld" layoutX="434.0" layoutY="346.0" prefHeight="56.0" prefWidth="254.0" promptText="write password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="updatebtn" layoutX="625.0" layoutY="24.0" mnemonicParsing="false" opacity="0.0" prefHeight="70.0" prefWidth="69.0" text="Button" />
+   </children>
+</AnchorPane>
